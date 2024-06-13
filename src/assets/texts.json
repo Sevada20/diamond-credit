@@ -1,0 +1,23 @@
+{
+  "signInForm": {
+    "emailLabel": "Էլ հասցե",
+    "emailPlaceholder": "kolian.karine@gmail.com",
+    "passwordLabel": "Գաղտնաբառ",
+    "passwordPlaceholder": "153874wd354*",
+    "rememberPassword": "Հիշել գաղտնաբառը",
+    "forgotPassword": "Մոռացե՞լ եք գաղտնաբառը",
+    "signInButton": "Մուտք",
+    "invalidEmail": "Invalid email address",
+    "required": "Required",
+    "passwordMinLength": "Password must be at least 8 characters"
+  },
+  "signInMainStep": {
+    "welcome": "ԲԱՐԻ ԳԱԼՈՒՍՏ",
+    "signIn": "Մուտք",
+    "signUp": "Գրանցվել"
+  },
+  "signInSelectionPlaceStep": {
+    "gyumri": "Գյումրի",
+    "yerevan": "Երևան"
+  }
+}
