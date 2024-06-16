@@ -1,7 +1,25 @@
 import { createUseStyles } from "react-jss";
 
-const useStyles = createUseStyles((theme) => ({}), {
-  name: "home-page",
-});
+const useStyles = createUseStyles(
+  (theme) => ({
+    greeting: {
+      display: "flex",
+      alignItems: "center",
+    },
+    titleGreeting: {
+      fontSize: "1rem",
+      color: theme.textStrong,
+    },
+    firstSectionRow: {
+      marginTop: 20,
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr 1fr 3fr 3fr",
+      columnGap: "25px",
+    },
+  }),
+  {
+    name: "home-page",
+  }
+);
 
 export default useStyles;

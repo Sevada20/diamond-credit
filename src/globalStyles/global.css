@@ -2,10 +2,6 @@ body {
   margin: 0;
   font-family: "Noto Sans Armenian", sans-serif;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Montaga:wght@400&display=swap");
-body {
-  margin: 0;
-  font-family: "Noto Sans Armenian", sans-serif;
-  line-height: normal;
+* {
+  box-sizing: border-box;
 }

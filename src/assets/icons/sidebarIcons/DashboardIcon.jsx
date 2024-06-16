@@ -1,4 +1,4 @@
-const MainIcon = ({ color = "#000000", width = 24, height = 24 }) => {
+const DashboardIcon = ({ color = "#000000", width = 24, height = 24 }) => {
   return (
     <svg
       width={width}
@@ -19,4 +19,4 @@ const MainIcon = ({ color = "#000000", width = 24, height = 24 }) => {
   );
 };
 
-export default MainIcon;
+export default DashboardIcon;

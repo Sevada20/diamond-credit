@@ -1,18 +1,18 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
-import styles from "./styles";
 import Sidebar from "../Sidebar/Sidebar";
+import styles from "./styles";
 const MainLayout = () => {
   const classes = styles();
 
   return (
-    <>
-      <Header />
+    <div className={classes.mainLayoutContainer}>
+      <Sidebar />
       <div className={classes.mainLayout}>
-        <Sidebar />
+        <Header />
         <Outlet />
       </div>
-    </>
+    </div>
   );
 };
 
