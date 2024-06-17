@@ -58,6 +58,7 @@ const Armenian = {
 
 const MyDatePicker = ({ label, subLabel, register, name, errors }) => {
   const classes = styles();
+  const [date, setDate] = useState(new Date());
 
   return (
     <>
