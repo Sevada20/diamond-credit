@@ -2,25 +2,6 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles(
   (theme) => ({
-    //
-    flatpickrCalendar: {
-      backgroundColor: "#f0f0f0",
-      border: "1px solid #ccc",
-    },
-
-    flatpickrMonth: {
-      backgroundColor: "#333",
-      color: "#fff",
-    },
-
-    flatpickrDay: {
-      "& today": {
-        backgroundColor: "#4caf50",
-        color: "white",
-      },
-    },
-
-    //
     contractFilter: {
       backgroundColor: theme.backgroundSecondary,
       padding: "17px 24px",
@@ -73,13 +54,13 @@ const useStyles = createUseStyles(
       top: "12%",
       background: theme.backgroundSecondary,
       paddingInline: 6,
-      left: "12px",
+      left: 12,
       transform: "translateY(-50%)",
     },
     coinIcon: {
       position: "absolute",
       top: "55%",
-      left: "12px",
+      left: 12,
       transform: "translateY(-50%)",
     },
     leftInput: {
