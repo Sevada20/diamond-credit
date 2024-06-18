@@ -3,5 +3,6 @@ export const light = {
   primaryColor: "#373962",
   backgroundBase: "#FFFFFF",
   backgroundMain: "#F6F5FA",
+  backgroundSecondary: "#EEF5FE",
   textStrong: "#000000",
 };
