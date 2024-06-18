@@ -14,14 +14,16 @@ const useStyles = createUseStyles(
     },
     leftInputsContainer: {
       width: "100%",
-      display: "flex",
-      flexDirection: "column",
-      gap: 12,
+      display: "grid",
+      gridTemplateColumns: "repeat(4, 1fr)",
+      gridGap: 12,
     },
+    customSelectorWrapper: { gridColumn: "span 4" },
     rightInputsContainer: {
       width: "100%",
-      display: "flex",
-      gap: 12,
+      display: "grid",
+      gridTemplateColumns: "repeat(2, 1fr)",
+      gridGap: 12,
     },
     rightInputsColumn: {
       width: "100%",
@@ -29,12 +31,8 @@ const useStyles = createUseStyles(
       flexDirection: "column",
       gap: 10,
     },
-    leftInputGroup: {
-      width: "100%",
-    },
-    rightInputGroup: {
-      width: "100%",
-    },
+    leftInputGroup: { width: "100%" },
+    rightInputGroup: { width: "100%", alignSelf: "flex-end" },
     label: {
       fontSize: 14,
       color: theme.primaryColor,
@@ -44,9 +42,7 @@ const useStyles = createUseStyles(
       display: "flex",
       gap: 20,
     },
-    inputWithIcon: {
-      position: "relative",
-    },
+    inputWithIcon: { position: "relative" },
     subLabel: {
       fontSize: 8,
       color: theme.textStrong,
@@ -79,9 +75,7 @@ const useStyles = createUseStyles(
       padding: "10px 30px",
       marginTop: 6,
     },
-    buttonsContainer: {
-      marginTop: 20,
-    },
+    buttonsContainer: { marginTop: 20 },
     searchButton: {
       padding: "10px 24px",
       borderRadius: 6,
