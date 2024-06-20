@@ -24,7 +24,7 @@ const useStyles = createUseStyles(
     signInBtn: {
       width: "50%",
       paddingBlock: "10px",
-      borderRadius: "6px",
+      borderRadius: theme.small,
       backgroundColor: theme.primaryColor,
       color: "#fff",
       border: "none",

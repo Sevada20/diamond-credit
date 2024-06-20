@@ -11,6 +11,8 @@ export const light = {
   warningColor: "#DC0505",
   accentColor: "#0E43FF",
   textAlternativeBase: "#FFF3E8",
+  textAlternativeStrong: "#333333",
+  errorColor: "#DC0505",
 };
 
 export const borderRadius = {

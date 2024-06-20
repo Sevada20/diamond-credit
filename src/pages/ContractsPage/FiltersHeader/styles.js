@@ -27,6 +27,9 @@ const useStyles = createUseStyles(
       paddingInline: "2.4%",
       paddingBottom: 9,
     },
+    active: {
+      borderBottom: `3px solid ${theme.primaryColor}`,
+    },
   }),
   {
     name: "filters-header",

@@ -90,3 +90,27 @@ export const contractsListData = [
     percent: "0,23%",
   },
 ];
+
+export const contractsInfoData = [
+  {
+    id: 1,
+    title: "Ընդհանուր պայմանագրեր",
+    amount: 15699,
+    fluctuation: 35,
+    growthFluctuation: true,
+  },
+  {
+    id: 2,
+    title: "Ակտիվ պայմանագրեր",
+    amount: 658,
+    fluctuation: 21,
+    growthFluctuation: false,
+  },
+  {
+    id: 3,
+    title: "Իրացված պայմանագրեր",
+    amount: 25,
+    fluctuation: 35,
+    growthFluctuation: true,
+  },
+];

@@ -1,4 +1,4 @@
-import { contractsListData } from "@/assets/data/contractsList";
+import { contractsListData } from "@/assets/data/contracts";
 import ContractCard from "../ContractCard/ContractCard";
 import styles from "./styles";
 

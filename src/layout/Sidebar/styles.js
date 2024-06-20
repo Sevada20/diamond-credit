@@ -22,9 +22,8 @@ const useStyles = createUseStyles(
       justifyContent: "space-between",
     },
     iconLink: {
-      padding: "8px",
-      width: "45px",
-      height: "45px",
+      width: "60px",
+      height: "60px",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",

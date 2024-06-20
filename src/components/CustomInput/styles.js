@@ -12,7 +12,7 @@ const useStyles = createUseStyles(
     input: {
       backgroundColor: theme.backgroundBase,
       width: "100%",
-      borderRadius: 6,
+      borderRadius: theme.small,
       border: "none",
       padding: 10,
       marginTop: 6,

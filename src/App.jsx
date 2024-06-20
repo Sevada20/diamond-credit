@@ -5,9 +5,9 @@ import MainLayout from "./layout/MainLayout/MainLayout";
 import ContractsPage from "./pages/ContractsPage/ContractsPage";
 import CustomersPage from "./pages/CustomersPage/CustomersPage";
 import CashierPage from "./pages/CashierPage/CashierPage";
-import "./globalStyles/global.css";
 import CalendarPage from "./pages/CalendarPage/CalendarPage";
 import TasksPage from "./pages/TasksPage/TasksPage";
+import "./globalStyles/global.css";
 
 function App() {
   return (

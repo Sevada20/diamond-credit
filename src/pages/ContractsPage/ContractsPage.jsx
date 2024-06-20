@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { contractsInfoData } from "@/assets/data/contracts";
 import ContractsList from "@/components/ContractsList/ContractsList";
 import ContractFilter from "@/components/ContractFilter/ContractFilter";
 import FiltersControlBar from "./FiltersControlBar/FiltersControlBar";
 import FiltersHeader from "./FiltersHeader/FiltersHeader";
 import addIcon from "@/assets/icons/contractsIcons/addIcon.svg";
-import styles from "./styles";
+import ContractsIcon from "@/assets/icons/sidebarIcons/ContractsIcon";
 import Pagination from "@/components/Pagination/Pagination";
+import ContractsInfoList from "@/components/ContractsInfoList/ContractsInfoList";
+import styles from "./styles";
 
 const ContractsPage = () => {
   const [showFilters, setShowFilters] = useState(false);
@@ -13,17 +16,10 @@ const ContractsPage = () => {
 
   return (
     <div className={classes.contractsPage}>
-      <div style={{ display: "flex", gap: 10 }}>
-        <div
-          style={{ height: 130, width: "100%", backgroundColor: "grey" }}
-        ></div>
-        <div
-          style={{ height: 130, width: "100%", backgroundColor: "grey" }}
-        ></div>
-        <div
-          style={{ height: 130, width: "100%", backgroundColor: "grey" }}
-        ></div>
-      </div>
+      <ContractsInfoList
+        infoCardList={contractsInfoData}
+        GeneralIcon={ContractsIcon}
+      />
       <div className={classes.titleWrapper}>
         <span className={classes.title}>Պայմանագիր</span>
         <button className={classes.addBtn}>

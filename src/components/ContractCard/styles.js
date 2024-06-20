@@ -6,7 +6,7 @@ const useStyles = createUseStyles(
       padding: "20px 20px 20px 30px",
       backgroundColor: theme.backgroundCard,
       boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-      borderRadius: 9,
+      borderRadius: theme.medium,
       borderLeft: ({ status }) => {
         if (status === true) {
           return `4px solid ${theme.successColor}`;

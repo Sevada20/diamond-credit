@@ -91,3 +91,11 @@ export const filtersFields = {
 
   userSelectorOptions: [],
 };
+
+export const mainFilters = [
+  { id: 1, label: "Ընդհանուր" },
+  { id: 2, label: "Ակտիվ" },
+  { id: 3, label: "Փակված" },
+  { id: 4, label: "Իրացված" },
+  { id: 5, label: "Ժամկետանց" },
+];

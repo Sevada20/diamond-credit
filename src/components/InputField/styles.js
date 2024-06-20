@@ -16,7 +16,7 @@ const useStyles = createUseStyles(
     },
     label: { fontSize: "1rem", fontWeight: 400 },
     input: {
-      borderRadius: "6px",
+      borderRadius: theme.small,
       border: "none",
       padding: "10px 10px 10px 38px",
     },

@@ -5,7 +5,7 @@ const useStyles = createUseStyles(
     flatpickrInput: {
       backgroundColor: "transparent",
       width: "100%",
-      borderRadius: 6,
+      borderRadius: theme.small,
       border: `1px solid ${theme.textStrong}`,
       padding: "10px 33px",
       marginTop: 6,

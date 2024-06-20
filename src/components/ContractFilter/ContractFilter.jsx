@@ -29,8 +29,8 @@ const ContractFilter = ({ showFilters }) => {
       evaluatedFrom: "",
       providedTo: "",
       evaluatedTo: "",
-      dateFrom: new Date(2024, 0, 1),
-      dateTo: new Date(2024, 0, 1),
+      dateFrom: new Date(),
+      dateTo: new Date(),
     },
   });
 

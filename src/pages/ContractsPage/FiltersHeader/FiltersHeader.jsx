@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { mainFilters } from "@/assets/data/filterFields";
 import MyDatePicker from "@/components/MyDatePicker/MyDatePicker";
 import styles from "./styles";
 
 const FiltersHeader = () => {
-  const classes = styles();
+  const [activeFilter, setActiveFilter] = useState(1);
+  const classes = styles({ activeFilter });
   const [dates, setDates] = useState({
     dateFrom: new Date(),
     dateTo: new Date(),
@@ -16,21 +18,20 @@ const FiltersHeader = () => {
     }));
   };
 
-  console.log("dates in filtersHeader", dates);
-
   return (
     <div className={classes.filtersHeader}>
       <div className={classes.mainFiltersMenu}>
-        <span
-          style={{ borderBottom: "3px solid #373962" }}
-          className={classes.mainFilterItem}
-        >
-          Ընդհանուր
-        </span>
-        <span className={classes.mainFilterItem}>Ակտիվ</span>
-        <span className={classes.mainFilterItem}>Փակված</span>
-        <span className={classes.mainFilterItem}>Իրացված</span>
-        <span className={classes.mainFilterItem}>Ժամկետանց</span>
+        {mainFilters.map((filter) => (
+          <span
+            onClick={() => setActiveFilter(filter.id)}
+            key={filter.id}
+            className={`${classes.mainFilterItem} ${
+              activeFilter === filter.id ? classes.active : ""
+            }`}
+          >
+            {filter.label}
+          </span>
+        ))}
       </div>
       <div className={classes.dates}>
         <MyDatePicker
