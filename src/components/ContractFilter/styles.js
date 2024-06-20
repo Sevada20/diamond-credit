@@ -6,19 +6,7 @@ const useStyles = createUseStyles(
       backgroundColor: theme.backgroundSecondary,
       padding: "17px 24px",
       borderRadius: "30px 0 30px 30px",
-    },
-    controlsBar: {
-      display: "flex",
-      justifyContent: "flex-end",
-      alignItems: "center",
-      gap: 15,
-    },
-    buttonBlock: {
-      display: "flex",
-      alignItems: "center",
-      gap: 10,
-      marginBottom: 20,
-      cursor: "pointer",
+      marginBottom: 15,
     },
     inputsContainer: {
       width: "100%",

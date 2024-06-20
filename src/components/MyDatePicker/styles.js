@@ -28,7 +28,8 @@ const useStyles = createUseStyles(
       color: theme.textStrong,
       position: "absolute",
       top: "12%",
-      background: theme.backgroundSecondary,
+      background: ({ customStyle }) =>
+        customStyle ? customStyle : theme.backgroundSecondary,
       paddingInline: 6,
       left: 12,
       transform: "translateY(-50%)",

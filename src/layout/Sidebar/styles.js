@@ -2,21 +2,24 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles(
   (theme) => ({
-    sidebarContainer: {
+    sideBarContainer: {
       backgroundColor: theme.backgroundBase,
-      height: "100%",
+      padding: "30px 0px 36px 0px",
+      height: "100vh",
+      position: "fixed",
     },
-    title: {
-      marginBottom: "44px",
+    logo: {
+      paddingInline: 10,
       fontSize: "18",
       color: theme.primaryColor,
     },
     sidebarMenuContainer: {
+      paddingTop: "20px",
       height: "100%",
       display: "flex",
-      justifyContent: "space-between",
       flexDirection: "column",
       alignItems: "center",
+      justifyContent: "space-between",
     },
     iconLink: {
       padding: "8px",
@@ -32,14 +35,15 @@ const useStyles = createUseStyles(
     },
     iconsContainer: {
       display: "flex",
+      gap: "20px",
       flexDirection: "column",
-      gap: "25px",
-      height: "100%",
+      justifyContent: "space-between",
     },
     settingsContainer: {
       display: "flex",
       flexDirection: "column",
-      gap: "25px",
+      alignItems: "center",
+      gap: "30px",
     },
   }),
   {
