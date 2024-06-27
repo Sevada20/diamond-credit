@@ -7,7 +7,7 @@ const useStyles = createUseStyles(
       display: "flex",
       justifyContent: "space-between",
       gap: "150px",
-      marginBottom: "20px",
+      paddingInline: "30px",
     },
     searchBar: {
       position: "relative",

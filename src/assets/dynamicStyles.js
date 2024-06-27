@@ -13,10 +13,13 @@ export const light = {
   textAlternativeBase: "#FFF3E8",
   textAlternativeStrong: "#333333",
   errorColor: "#DC0505",
+  borderColor: "#5f6181",
+  textSecondary: "#d7d7d7",
 };
 
 export const borderRadius = {
   large: "30px",
+  secondaryMedium: "15px",
   medium: "9px",
   small: "6px",
 };

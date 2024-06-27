@@ -114,3 +114,76 @@ export const contractsInfoData = [
     growthFluctuation: true,
   },
 ];
+
+export const loansData = {
+  securedLoansLinks: [
+    {
+      id: 1,
+      title: "Մեքենա",
+    },
+    {
+      id: 2,
+      title: "Ոսկի",
+    },
+    {
+      id: 3,
+      title: "Տեխնիկա",
+    },
+  ],
+  unsecuredLoansLinks: [
+    {
+      id: 1,
+      title: "Սպառողական",
+    },
+    {
+      id: 2,
+      title: "Բիզնես",
+    },
+    {
+      id: 3,
+      title: "Ուսանողական",
+    },
+  ],
+};
+
+export const stepIndicatorsData = [
+  {
+    id: 1,
+    name: "Անձնական տվյալներ",
+  },
+  {
+    id: 2,
+    name: "Վարկի տվյալներ",
+  },
+  {
+    id: 3,
+    name: "Բանկային տվյալներ",
+  },
+  {
+    id: 4,
+    name: "Ամփոփում",
+  },
+];
+
+export const countries = {
+  Հայաստան: ["Երևան", "Գյումրի", "Վանաձոր"],
+  ԱՄՆ: ["Նյու Յորք", "Լոս Անջելես", "Չիկագո"],
+  Ռուսաստան: ["Մոսկվա", "Սանկտ Պետերբուրգ", "Նովոսիբիրսկ"],
+};
+
+const creditCategoriesData = {
+  Տեխնիկա: {
+    subCategories: ["Հեռախոս", "Համակարգիչ"],
+    model: ["Iphone 15 pro", "Iphone SE 2020"],
+    percentRate: 0.5,
+  },
+  Մեքենա: {
+    subCategories: ["", "", ""],
+    model: ["BMW", "Mercedes"],
+    percentRate: 0.8,
+  },
+  Ոսկի: {
+    subCategories: ["Մատանի", "Թևնոց"],
+    percentRate: 0.8,
+  },
+};

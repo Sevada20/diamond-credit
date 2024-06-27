@@ -9,6 +9,7 @@ import ContractsIcon from "@/assets/icons/sidebarIcons/ContractsIcon";
 import Pagination from "@/components/Pagination/Pagination";
 import ContractsInfoList from "@/components/ContractsInfoList/ContractsInfoList";
 import styles from "./styles";
+import { Link } from "react-router-dom";
 
 const ContractsPage = () => {
   const [showFilters, setShowFilters] = useState(false);
@@ -22,10 +23,10 @@ const ContractsPage = () => {
       />
       <div className={classes.titleWrapper}>
         <span className={classes.title}>Պայմանագիր</span>
-        <button className={classes.addBtn}>
+        <Link to="/new-contract" className={classes.newContractLink}>
           <img src={addIcon} alt="add icon" />
           <span className={classes.addBtnText}> Ավելացնել</span>
-        </button>
+        </Link>
       </div>
       <div className={classes.contractContainer}>
         <FiltersHeader />

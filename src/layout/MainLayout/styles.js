@@ -6,11 +6,12 @@ const useStyles = createUseStyles(
       display: "flex",
     },
     mainLayout: {
-      padding: "20px 30px 20px 132px",
+      padding: "20px 0px 00px 113px",
       display: "flex",
       flexDirection: "column",
       backgroundColor: theme.backgroundMain,
       width: "100%",
+      height: ({ isNewContract }) => (isNewContract ? "100vh" : ""),
     },
   }),
   {

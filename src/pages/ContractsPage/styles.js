@@ -2,6 +2,9 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles(
   (theme) => ({
+    contractsPage: {
+      padding: "20px 30px 20px 30px",
+    },
     contractContainer: {
       borderRadius: "30px",
     },
@@ -39,13 +42,14 @@ const useStyles = createUseStyles(
       alignItems: "center",
       paddingBlock: "1.3%",
     },
-    addBtn: {
+    newContractLink: {
       backgroundColor: theme.primaryColor,
       color: theme.textAlternativeBase,
       border: "none",
       padding: "5px 10px",
       borderRadius: theme.medium,
       cursor: "pointer",
+      textDecoration: "none",
     },
     addBtnText: {
       fontSize: 14,
