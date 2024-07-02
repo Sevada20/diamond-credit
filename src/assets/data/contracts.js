@@ -187,3 +187,10 @@ const creditCategoriesData = {
     percentRate: 0.8,
   },
 };
+
+export const carFieldsData = [
+  { name: "carYear", label: "Տարեթիվ", placeholder: "2018" },
+  { name: "enginePower", label: "Շարժիչի հզոր․", placeholder: "154/210" },
+  { name: "licensePlate", label: "Պետ. համարանիշ", placeholder: "01 HO 030" },
+  { name: "color", label: "Գույնը", placeholder: "Սև մետալիկ" },
+];

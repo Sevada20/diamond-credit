@@ -1,10 +1,16 @@
 import { createUseStyles } from "react-jss";
 
+const baseButtonStyles = {
+  display: "flex",
+  padding: "10px 24px",
+  cursor: "pointer",
+  fontSize: "1rem",
+};
+
 const useStyles = createUseStyles(
   (theme) => ({
     newContractStepsContainer: {
       width: "100%",
-      border: "2px solid red",
       padding: "2%",
       borderRadius: theme.large,
       display: "flex",
@@ -14,7 +20,9 @@ const useStyles = createUseStyles(
     },
     stepsContainer: {
       width: "100%",
-      border: "2px solid black",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
     },
     stepIndicatorsList: {
       width: "43%",
@@ -61,8 +69,55 @@ const useStyles = createUseStyles(
       borderBottom: `1px solid ${theme.borderColor}`,
     },
     stepsWrapper: {
-      border: "2px solid red",
+      paddingInline: 22,
+    },
+    customInputsGroupWrapper: {
+      paddingInline: 22,
+    },
+    buttonsContainer: {
+      display: "flex",
+      justifyContent: "flex-end",
+      alignItems: "center",
+      gap: 15,
+      marginTop: 20,
+    },
+    cancelBtn: {
+      ...baseButtonStyles,
+      backgroundColor: "#9992cb",
+      borderRadius: theme.small,
+      color: theme.textSecondary,
+      border: "none",
+    },
+    submitBtn: {
+      ...baseButtonStyles,
+      borderRadius: theme.small,
+      color: theme.primaryColor,
+      background: "transparent",
+    },
+    continueBtn: {
+      ...baseButtonStyles,
+      borderRadius: theme.small,
+      backgroundColor: theme.primaryColor,
+      color: theme.textBase,
+      border: "none",
+    },
+    descriptionContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 6,
+      width: "100%",
       paddingInline: 30,
+    },
+    description: {
+      resize: "none",
+      minHeight: "50px",
+      borderRadius: theme.small,
+      border: "none",
+      padding: 10,
+    },
+    label: {
+      fontSize: "1rem",
+      color: theme.primaryColor,
     },
   }),
   {

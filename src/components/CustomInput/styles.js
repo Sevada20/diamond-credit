@@ -3,10 +3,13 @@ import { createUseStyles } from "react-jss";
 const useStyles = createUseStyles(
   (theme) => ({
     inputContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 6,
       width: "100%",
     },
     label: {
-      fontSize: 14,
+      fontSize: ({ customStyles }) => customStyles?.fontSize || 14,
       color: theme.primaryColor,
     },
     input: {
@@ -15,7 +18,7 @@ const useStyles = createUseStyles(
       borderRadius: theme.small,
       border: "none",
       padding: 10,
-      marginTop: 6,
+      paddingLeft: ({ customStyles }) => customStyles?.paddingLeft,
     },
   }),
   {

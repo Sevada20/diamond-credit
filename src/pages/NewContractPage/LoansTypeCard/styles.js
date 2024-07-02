@@ -7,6 +7,7 @@ const useStyles = createUseStyles(
       borderRadius: theme.large,
       position: "relative",
       border: `0.5px solid ${theme.primaryColor}`,
+      cursor: "pointer",
     },
     loansTypeTitle: {
       fontSize: 24,
@@ -23,9 +24,6 @@ const useStyles = createUseStyles(
     link: {
       textDecoration: "none",
       color: theme.primaryColor,
-      "&:hover": {
-        textDecoration: "underline",
-      },
     },
     loansTypeLogoContainer: {
       display: "flex",

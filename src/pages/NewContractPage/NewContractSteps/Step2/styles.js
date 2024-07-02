@@ -1,5 +1,12 @@
 import { createUseStyles } from "react-jss";
 
+const baseButtonStyles = {
+  border: "none",
+  fontSize: 14,
+  cursor: "pointer",
+  background: "none",
+};
+
 const useStyles = createUseStyles(
   (theme) => ({
     formContainer: {
@@ -10,30 +17,55 @@ const useStyles = createUseStyles(
     },
     inputsContainer: {
       display: "flex",
-      gap: 30,
+      gap: 15,
       width: "100%",
+    },
+    categoryInputsContainer: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: 15,
     },
     inputWrapper: {
       display: "flex",
       flexDirection: "column",
-      gap: 3,
+      gap: 6,
       width: "100%",
+      flex: "1 1 calc(33.333% - 10px)",
     },
     label: {
       fontSize: "1rem",
-      fontWeight: 600,
       color: theme.primaryColor,
     },
     input: {
       border: "none",
       borderRadius: theme.small,
       width: "100%",
-      padding: "10px 13px",
+      padding: 10,
     },
     labelWrapper: {
       display: "flex",
       alignItems: "center",
       gap: 6,
+    },
+    line: {
+      width: "100%",
+      height: 1,
+      backgroundColor: theme.backgroundBase,
+      marginTop: 10,
+    },
+    buttonWrapper: {
+      display: "flex",
+      justifyContent: "flex-end",
+      gap: 15,
+      marginBottom: 5,
+    },
+    addSubCategoryButton: {
+      color: theme.primaryColor,
+      ...baseButtonStyles,
+    },
+    removeSubCategoryButton: {
+      color: theme.primaryColor,
+      ...baseButtonStyles,
     },
   }),
   {

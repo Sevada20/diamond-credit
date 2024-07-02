@@ -15,6 +15,7 @@ export const light = {
   errorColor: "#DC0505",
   borderColor: "#5f6181",
   textSecondary: "#d7d7d7",
+  labelColor: "#666666",
 };
 
 export const borderRadius = {

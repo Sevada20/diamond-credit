@@ -1,18 +1,10 @@
 import styles from "./styles";
 
-const Step1 = ({
-  goToNextStep,
-  countries,
-  cities,
-  register,
-  handleSubmit,
-  onSubmit,
-  errors,
-}) => {
+const Step1 = ({ goToNextStep, countries, cities, register, errors }) => {
   const classes = styles();
 
   return (
-    <form className={classes.formContainer} onSubmit={handleSubmit(onSubmit)}>
+    <form className={classes.formContainer}>
       <div className={classes.inputWrapper}>
         <label className={classes.label}>Հաճախորդի որոնում</label>
         <input
@@ -111,25 +103,21 @@ const Step1 = ({
       <div className={classes.inputsContainer}>
         <div className={classes.inputWrapper}>
           <label className={classes.label}>Երկիր</label>
-          <select className={classes.input} {...register("country")}>
-            {Object.keys(countries).map((country) => (
-              <option key={country} value={country}>
-                {country}
-              </option>
-            ))}
-          </select>
+          <input
+            placeholder="Հայաստան"
+            className={classes.input}
+            {...register("country")}
+          />
           {errors.country && <p>{errors.country.message}</p>}
         </div>
 
         <div className={classes.inputWrapper}>
           <label className={classes.label}>Քաղաք</label>
-          <select className={classes.input} {...register("city")}>
-            {cities.map((city) => (
-              <option key={city} value={city}>
-                {city}
-              </option>
-            ))}
-          </select>
+          <input
+            placeholder="Երևան"
+            className={classes.input}
+            {...register("city")}
+          />
           {errors.city && <p>{errors.city.message}</p>}
         </div>
 
@@ -175,22 +163,6 @@ const Step1 = ({
           />
           {errors.additionalPhone && <p>{errors.additionalPhone.message}</p>}
         </div>
-      </div>
-
-      <div className={classes.buttonsContainer}>
-        <button type="button" className={classes.cancelBtn}>
-          Չեղարկել
-        </button>
-        <button type="submit" className={classes.submitBtn}>
-          Պահպանել
-        </button>
-        <button
-          onClick={goToNextStep}
-          type="button"
-          className={classes.continueBtn}
-        >
-          Շարունակել
-        </button>
       </div>
     </form>
   );

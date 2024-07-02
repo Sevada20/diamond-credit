@@ -1,6 +1,14 @@
 import styles from "./styles";
-const CustomInput = ({ id, label, name, register }) => {
-  const classes = styles();
+const CustomInput = ({
+  customStyles,
+  id,
+  label,
+  name,
+  register,
+  placeholder,
+  errors,
+}) => {
+  const classes = styles({ customStyles });
 
   return (
     <div className={classes.inputContainer}>
@@ -8,11 +16,13 @@ const CustomInput = ({ id, label, name, register }) => {
         {label}
       </label>
       <input
+        placeholder={placeholder}
         type="text"
         {...register(name)}
         id={`input${id}`}
         className={classes.input}
       />
+      {errors && <p>{errors}</p>}
     </div>
   );
 };

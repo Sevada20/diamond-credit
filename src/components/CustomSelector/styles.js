@@ -6,7 +6,8 @@ const useStyles = createUseStyles(
       width: "100%",
     },
     label: {
-      fontSize: 14,
+      fontSize: ({ customStyles }) => customStyles.fontSize,
+      fontWeight: ({ customStyles }) => customStyles.fontWeight,
       color: theme.primaryColor,
     },
     select: {

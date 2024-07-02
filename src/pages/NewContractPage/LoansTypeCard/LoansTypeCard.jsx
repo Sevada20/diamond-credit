@@ -6,7 +6,7 @@ const LoansTypeCard = ({ goToNextMainStep, logo, title, links }) => {
   const classes = styles();
 
   return (
-    <div className={classes.loansTypeCard}>
+    <div onClick={goToNextMainStep} className={classes.loansTypeCard}>
       <div className={classes.loansTypeLogoContainer}>
         <img src={logo} alt="logo" className={classes.loansTypeLogo} />
       </div>
@@ -16,9 +16,9 @@ const LoansTypeCard = ({ goToNextMainStep, logo, title, links }) => {
         <div className={classes.loansTypeLinks}>
           {links.map((link) => (
             <li key={link.id} className={classes.loansTypeLink}>
-              <Link onClick={goToNextMainStep} to="" className={classes.link}>
+              <span onClick={goToNextMainStep} to="" className={classes.link}>
                 {link.title}
-              </Link>
+              </span>
             </li>
           ))}
         </div>

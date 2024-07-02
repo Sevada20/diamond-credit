@@ -8,16 +8,25 @@ const NewContractPage = () => {
   const classes = styles();
   const [mainCurrentStep, setMainCurrentStep] = useState(1);
   const [currentStep, setCurrentStep] = useState(1);
+  const [provided, setProvided] = useState(0);
 
   const goToNextMainStep = () => setMainCurrentStep((prevStep) => prevStep + 1);
   const goToPreviousManiStep = () =>
     setMainCurrentStep((prevStep) => prevStep - 1);
 
+  const checkValueProvided = (value) => {
+    setProvided(value);
+  };
+
   const goToPreviousStep = () => {
     if (currentStep === 1) {
       goToPreviousManiStep();
     } else {
-      setCurrentStep((prevStep) => prevStep - 1);
+      if ((provided < 20000 || !provided) && currentStep === 4) {
+        setCurrentStep((prevStep) => prevStep - 2);
+      } else {
+        setCurrentStep((prevStep) => prevStep - 1);
+      }
     }
   };
 
@@ -28,6 +37,7 @@ const NewContractPage = () => {
       case 2:
         return (
           <NewContractSteps
+            checkValueProvided={checkValueProvided}
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
             goToPreviousStep={goToPreviousStep}

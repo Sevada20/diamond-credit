@@ -1,12 +1,5 @@
 import { createUseStyles } from "react-jss";
 
-const baseButtonStyles = {
-  display: "flex",
-  padding: "10px 24px",
-  cursor: "pointer",
-  fontSize: "1rem",
-};
-
 const useStyles = createUseStyles(
   (theme) => ({
     formContainer: {
@@ -33,9 +26,8 @@ const useStyles = createUseStyles(
     dateInput: {
       border: "none",
       borderRadius: theme.small,
-      width: "11%",
-      paddingBlock: 10,
-      paddingLeft: 15,
+      width: "9.5%",
+      padding: 10,
     },
     inputWrapper: {
       display: "flex",
@@ -45,7 +37,6 @@ const useStyles = createUseStyles(
     },
     label: {
       fontSize: "1rem",
-      fontWeight: 600,
       color: theme.primaryColor,
     },
     input: {
@@ -53,32 +44,6 @@ const useStyles = createUseStyles(
       borderRadius: theme.small,
       width: "100%",
       padding: "10px 13px",
-    },
-    buttonsContainer: {
-      display: "flex",
-      justifyContent: "flex-end",
-      gap: 15,
-      marginTop: 20,
-    },
-    cancelBtn: {
-      ...baseButtonStyles,
-      backgroundColor: "#9992cb",
-      borderRadius: theme.small,
-      color: theme.textSecondary,
-      border: "none",
-    },
-    submitBtn: {
-      ...baseButtonStyles,
-      borderRadius: theme.small,
-      color: theme.primaryColor,
-      background: "transparent",
-    },
-    continueBtn: {
-      ...baseButtonStyles,
-      borderRadius: theme.small,
-      backgroundColor: theme.primaryColor,
-      color: theme.textBase,
-      border: "none",
     },
   }),
   {

@@ -99,3 +99,25 @@ export const mainFilters = [
   { id: 4, label: "Իրացված" },
   { id: 5, label: "Ժամկետանց" },
 ];
+
+export const contractsCategoryOptions = [
+  {
+    id: 1,
+    option: "Տեխնիկա",
+  },
+  {
+    id: 2,
+    option: "Ոսկի",
+  },
+  {
+    id: 3,
+    option: "Մեքենա",
+  },
+];
+
+export const inputFieldsData = [
+  { name: "percentRate", label: "Տոկոսադրույք", placeholder: "0,4%" },
+  { name: "fine", label: "Տուգանք", placeholder: "0,5%" },
+  { name: "contractTerm", label: "Պայմանագրի ժամկետ", placeholder: "150 օր" },
+  { name: "oneTime", label: "ՄԻանվագ", placeholder: "2,5%" },
+];
