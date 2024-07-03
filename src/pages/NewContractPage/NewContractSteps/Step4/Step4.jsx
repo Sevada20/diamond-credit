@@ -5,6 +5,7 @@ import emailIcon from "@/assets/icons/contractsIcons/emailIcon.svg";
 import bankIcon from "@/assets/icons/contractsIcons/bankIcon.svg";
 import bankCardIcon from "@/assets/icons/contractsIcons/bankCardIcon.svg";
 import editIcon from "@/assets/icons/contractsIcons/editIcon.svg";
+import removeIcon from "@/assets/icons/contractsIcons/removeIcon.svg";
 import styles from "./styles";
 const Step4 = ({ watch, setValue, setCurrentStep }) => {
   const classes = styles();
@@ -23,6 +24,15 @@ const Step4 = ({ watch, setValue, setCurrentStep }) => {
       passportFileInputRef.current.click();
     } else if (fieldName === "contractFile") {
       contractFileInputRef.current.click();
+    }
+  };
+
+  const removeFile = (fieldName) => {
+    setValue(fieldName, null);
+    if (fieldName === "passportFile") {
+      passportFileInputRef.current.value = null;
+    } else if (fieldName === "contractFile") {
+      contractFileInputRef.current.value = null;
     }
   };
 
@@ -212,23 +222,37 @@ const Step4 = ({ watch, setValue, setCurrentStep }) => {
               </div>
               <div className={classes.fileUploadContainer}>
                 <label className={classes.fileLabel}>Ֆայլեր</label>
-                <div className={classes.uploadFileBlock}>
-                  <span
-                    onClick={() => handleFileClick("passportFile")}
-                    className={classes.uploadFileSpan}
-                  >
-                    Ընտրել Ֆայլ
-                  </span>
-                  <span className={classes.statusUploaded}>
-                    {data.passportFile && data.passportFile.name}
-                  </span>
-                  <input
-                    ref={passportFileInputRef}
-                    type="file"
-                    id="passportFile"
-                    style={{ display: "none" }}
-                    onChange={(e) => handleFileChange(e, "passportFile")}
-                  />
+                <div className={classes.uploadFileBlockWrapper}>
+                  <div className={classes.uploadFileBlock}>
+                    <span
+                      onClick={() => handleFileClick("passportFile")}
+                      className={classes.uploadFileSpan}
+                    >
+                      Ընտրել Ֆայլ
+                    </span>
+                    <span className={classes.statusUploaded}>
+                      <span className={classes.statusUploadedText}>
+                        {data.passportFile
+                          ? data.passportFile.name
+                          : "Ֆայլը ընտրված չէ"}
+                      </span>
+                    </span>
+                    <input
+                      ref={passportFileInputRef}
+                      type="file"
+                      id="passportFile"
+                      style={{ display: "none" }}
+                      onChange={(e) => handleFileChange(e, "passportFile")}
+                    />
+                  </div>
+                  {data.passportFile && (
+                    <img
+                      onClick={() => removeFile("passportFile")}
+                      className={classes.removeIcon}
+                      src={removeIcon}
+                      alt="remove icon"
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -243,23 +267,40 @@ const Step4 = ({ watch, setValue, setCurrentStep }) => {
               </div>
               <div className={classes.fileUploadContainer}>
                 <label className={classes.fileLabel}>Ֆայլեր</label>
-                <div className={classes.uploadFileBlock}>
-                  <span
-                    onClick={() => handleFileClick("contractFile")}
-                    className={classes.uploadFileSpan}
-                  >
-                    Ընտրել Ֆայլ
-                  </span>
-                  <input
-                    ref={contractFileInputRef}
-                    type="file"
-                    id="contractFile"
-                    style={{ display: "none" }}
-                    onChange={(e) => handleFileChange(e, "contractFile")}
-                  />
-                  <span className={classes.statusUploaded}>
-                    {data.contractFile && data.contractFile.name}
-                  </span>
+                <div className={classes.uploadFileBlockWrapper}>
+                  <div className={classes.uploadFileBlock}>
+                    <span
+                      onClick={() => handleFileClick("contractFile")}
+                      className={classes.uploadFileSpan}
+                    >
+                      Ընտրել Ֆայլ
+                    </span>
+                    <input
+                      ref={contractFileInputRef}
+                      type="file"
+                      id="contractFile"
+                      style={{ display: "none" }}
+                      onChange={(e) => handleFileChange(e, "contractFile")}
+                    />
+                    <span className={classes.statusUploaded}>
+                      <span
+                        style={{ whiteSpace: "nowrap" }}
+                        className={classes.statusUploadedText}
+                      >
+                        {data.contractFile
+                          ? data.contractFile.name
+                          : "Ֆայլը ընտրված չէ"}
+                      </span>
+                    </span>
+                  </div>
+                  {data.contractFile && (
+                    <img
+                      onClick={() => removeFile("contractFile")}
+                      className={classes.removeIcon}
+                      src={removeIcon}
+                      alt="remove icon"
+                    />
+                  )}
                 </div>
               </div>
             </div>
