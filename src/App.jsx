@@ -8,6 +8,8 @@ import CustomersPage from "./pages/CustomersPage/CustomersPage";
 import CashierPage from "./pages/CashierPage/CashierPage";
 import CalendarPage from "./pages/CalendarPage/CalendarPage";
 import TasksPage from "./pages/TasksPage/TasksPage";
+import ContractDetailsPage from "./pages/ContractDetailsPage/ContractDetailsPage";
+import ContractOverviewPage from "./pages/ContractOverviewPage/ContractOverviewPage";
 import "./globalStyles/global.css";
 
 function App() {
@@ -17,6 +19,10 @@ function App() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="/contracts" element={<ContractsPage />} />
+        <Route path="/contracts/:id" element={<ContractDetailsPage />}>
+          <Route index element={<ContractOverviewPage />} />
+          <Route path="customers" element={<CustomersPage />} />
+        </Route>
         <Route path="/new-contract" element={<NewContractPage />} />
         <Route path="/customers" element={<CustomersPage />} />
         <Route path="/cashier" element={<CashierPage />} />
