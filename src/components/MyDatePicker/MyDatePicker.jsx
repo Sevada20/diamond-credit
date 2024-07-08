@@ -10,10 +10,11 @@ const MyDatePicker = ({
   register,
   name,
   value,
-  setValue,
+  onChange,
   errors,
+  customStyle,
 }) => {
-  const classes = styles();
+  const classes = styles({ customStyle });
 
   return (
     <>
@@ -27,7 +28,7 @@ const MyDatePicker = ({
           className={classes.flatpickrInput}
           data-enable-time
           value={value}
-          onChange={([selectedDate]) => setValue(name, selectedDate)}
+          onChange={onChange}
           options={{
             dateFormat: "d F Y",
             locale: Armenian,

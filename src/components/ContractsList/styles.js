@@ -2,7 +2,12 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles(
   (theme) => ({
-    contractFilter: {},
+    contractsList: {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      gap: 12,
+    },
   }),
   {
     name: "contracts-list",

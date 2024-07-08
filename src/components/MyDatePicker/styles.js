@@ -5,7 +5,7 @@ const useStyles = createUseStyles(
     flatpickrInput: {
       backgroundColor: "transparent",
       width: "100%",
-      borderRadius: 6,
+      borderRadius: theme.borderRadius.small,
       border: `1px solid ${theme.textStrong}`,
       padding: "10px 33px",
       marginTop: 6,
@@ -27,11 +27,12 @@ const useStyles = createUseStyles(
       fontSize: 8,
       color: theme.textStrong,
       position: "absolute",
-      top: "12%",
-      background: theme.backgroundSecondary,
+      // top: "0%",
+      background: ({ customStyle }) =>
+        customStyle ? customStyle : theme.backgroundSecondary,
       paddingInline: 6,
       left: 12,
-      transform: "translateY(-50%)",
+      // transform: "translateY(-50%)",
     },
   }),
   {

@@ -1,18 +1,13 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { filtersFields } from "@/assets/data/filterFields";
 import coinIcon from "@/assets/icons/contractsIcons/coinIcon.svg";
-import downloadIcon from "@/assets/icons/contractsIcons/downloadIcon.svg";
-import filterIcon from "@/assets/icons/contractsIcons/filterIcon.svg";
-import arrowUpIcon from "@/assets/icons/contractsIcons/arrowUpIcon.svg";
-import arrowDownIcon from "@/assets/icons/contractsIcons/arrowDownIcon.svg";
 import CustomInput from "../CustomInput/CustomInput";
 import MyDatePicker from "../MyDatePicker/MyDatePicker";
-import styles from "./styles";
 import CustomSelector from "../CustomSelector/CustomSelector";
-const ContractFilter = () => {
+import styles from "./styles";
+const ContractFilter = ({ showFilters }) => {
   const classes = styles();
-  const [showFilters, setShowFilters] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -34,8 +29,8 @@ const ContractFilter = () => {
       evaluatedFrom: "",
       providedTo: "",
       evaluatedTo: "",
-      dateFrom: new Date(2024, 0, 1),
-      dateTo: new Date(2024, 0, 1),
+      dateFrom: new Date(),
+      dateTo: new Date(),
     },
   });
 
@@ -43,26 +38,14 @@ const ContractFilter = () => {
     console.log(data);
   };
 
+  const handleDateChange =
+    (name) =>
+    ([selectedDate]) => {
+      setValue(name, selectedDate);
+    };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className={classes.controlsBar}>
-        <div className={classes.buttonBlock}>
-          <img src={downloadIcon} alt="download icon" />
-          <span>ներբեռնել</span>
-        </div>
-        <div
-          onClick={() => setShowFilters(!showFilters)}
-          className={classes.buttonBlock}
-        >
-          <img src={filterIcon} alt="Filter icon" />
-          <span>ֆիլտռել</span>
-          {showFilters ? (
-            <img src={arrowUpIcon} alt="arrow icon" />
-          ) : (
-            <img src={arrowDownIcon} alt="arrow icon" />
-          )}
-        </div>
-      </div>
       {showFilters && (
         <div className={classes.contractFilter}>
           <div className={classes.inputsContainer}>
@@ -128,7 +111,7 @@ const ContractFilter = () => {
                   label="Ամսաթիվ"
                   subLabel="Սկսած"
                   value={watch("dateFrom")}
-                  setValue={setValue}
+                  onChange={handleDateChange("dateFrom")}
                 />
               </div>
               <div className={classes.rightInputGroup}>
@@ -138,7 +121,7 @@ const ContractFilter = () => {
                   errors={errors}
                   name="dateTo"
                   value={watch("dateTo")}
-                  setValue={setValue}
+                  onChange={handleDateChange("dateTo")}
                 />
               </div>
             </div>

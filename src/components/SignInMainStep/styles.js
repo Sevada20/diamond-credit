@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 const useStyles = createUseStyles(
   (theme) => ({
     title: {
-      fontSize: "2rem",
+      fontSize: 32,
     },
     authOption: {
       cursor: "pointer",

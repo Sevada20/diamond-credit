@@ -6,13 +6,14 @@ const useStyles = createUseStyles(
       width: "100%",
     },
     label: {
-      fontSize: 14,
+      fontSize: ({ customStyles }) => customStyles.fontSize,
+      fontWeight: ({ customStyles }) => customStyles.fontWeight,
       color: theme.primaryColor,
     },
     select: {
       backgroundColor: theme.backgroundBase,
       width: "100%",
-      borderRadius: 6,
+      borderRadius: theme.borderRadius.small,
       border: "none",
       padding: 10,
       marginTop: 6,
