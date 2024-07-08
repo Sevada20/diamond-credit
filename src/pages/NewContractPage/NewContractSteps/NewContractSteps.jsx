@@ -12,6 +12,13 @@ import Step4 from "./Step4/Step4";
 import CustomInputsGroup from "./InputsGroup/InputsGroup";
 import styles from "./styles";
 
+const STEP_1 = 1;
+const STEP_2 = 2;
+const STEP_3 = 3;
+const STEP_4 = 4;
+const MAX_STEP = STEP_4;
+const VALUE_THRESHOLD = 20000;
+
 const schema = yup.object().shape({
   clientsSearch: yup.string(),
   name: yup.string(),
@@ -190,11 +197,11 @@ const NewContractSteps = ({
   const goToNextStep = () => {
     const provided = watch("provided");
     checkValueProvided(provided);
-    if (currentStep < 4) {
+    if (currentStep < MAX_STEP) {
       if (
-        (provided < 20000 || !currentStep) &&
-        currentStep !== 3 &&
-        currentStep !== 1
+        (provided < VALUE_THRESHOLD || !currentStep) &&
+        currentStep !== STEP_3 &&
+        currentStep !== STEP_1
       ) {
         setCurrentStep((prevStep) => prevStep + 2);
       } else {
@@ -217,7 +224,7 @@ const NewContractSteps = ({
 
   const renderStep = () => {
     switch (currentStep) {
-      case 1:
+      case STEP_1:
         return (
           <Step1
             goToNextStep={goToNextStep}
@@ -225,7 +232,7 @@ const NewContractSteps = ({
             errors={errors}
           />
         );
-      case 2:
+      case STEP_2:
         return (
           <Step2
             goToNextStep={goToNextStep}
@@ -239,7 +246,7 @@ const NewContractSteps = ({
             removeGoldSubCategory={removeGoldSubCategory}
           />
         );
-      case 3:
+      case STEP_3:
         return (
           <Step3
             goToNextStep={goToNextStep}
@@ -248,7 +255,7 @@ const NewContractSteps = ({
             errors={errors}
           />
         );
-      case 4:
+      case STEP_4:
         return (
           <Step4
             setCurrentStep={setCurrentStep}
@@ -293,7 +300,7 @@ const NewContractSteps = ({
             <span className={classes.headerText}>ՆՈՐՔ հարցում</span>
           </div>
           <div className={classes.stepsWrapper}>{renderStep()}</div>
-          {currentStep === 2 && (
+          {currentStep === STEP_2 && (
             <>
               <div className={classes.customInputsGroupWrapper}>
                 <CustomInputsGroup

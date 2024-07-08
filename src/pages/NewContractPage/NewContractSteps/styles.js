@@ -4,7 +4,7 @@ const baseButtonStyles = {
   display: "flex",
   padding: "10px 24px",
   cursor: "pointer",
-  fontSize: "1rem",
+  fontSize: 16,
 };
 
 const useStyles = createUseStyles(
@@ -12,7 +12,7 @@ const useStyles = createUseStyles(
     newContractStepsContainer: {
       width: "100%",
       padding: "2%",
-      borderRadius: theme.large,
+      borderRadius: theme.borderRadius.large,
       display: "flex",
       gap: "46px",
       background:
@@ -32,7 +32,7 @@ const useStyles = createUseStyles(
       alignItems: "center",
       paddingInline: "2.5%",
       paddingBlock: "10%",
-      borderRadius: theme.secondaryMedium,
+      borderRadius: theme.borderRadius.secondaryMediumum,
       background:
         "linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0))",
     },
@@ -52,9 +52,7 @@ const useStyles = createUseStyles(
       width: 48,
       height: 48,
       borderRadius: "50%",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      ...theme.mixins.flexCenter,
     },
     newContractStepsHeader: {
       marginBottom: "5%",
@@ -84,19 +82,19 @@ const useStyles = createUseStyles(
     cancelBtn: {
       ...baseButtonStyles,
       backgroundColor: "#9992cb",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       color: theme.textSecondary,
       border: "none",
     },
     submitBtn: {
       ...baseButtonStyles,
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       color: theme.primaryColor,
       background: "transparent",
     },
     continueBtn: {
       ...baseButtonStyles,
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       backgroundColor: theme.primaryColor,
       color: theme.textBase,
       border: "none",
@@ -111,12 +109,12 @@ const useStyles = createUseStyles(
     description: {
       resize: "none",
       minHeight: "50px",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       border: "none",
       padding: 10,
     },
     label: {
-      fontSize: "1rem",
+      fontSize: 16,
       color: theme.primaryColor,
     },
   }),

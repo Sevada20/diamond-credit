@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 const useStyles = createUseStyles(
   (theme) => ({
     filtersHeader: {
-      borderRadius: `${theme.large} ${theme.large} 0 0`,
+      borderRadius: `${theme.borderRadius.large} ${theme.borderRadius.large} 0 0`,
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
@@ -20,7 +20,7 @@ const useStyles = createUseStyles(
       gap: 8,
     },
     mainFilterItem: {
-      fontSize: "1rem",
+      fontSize: 16,
       color: theme.primaryColor,
       cursor: "pointer",
       borderBottom: "1px solid #8788a1",

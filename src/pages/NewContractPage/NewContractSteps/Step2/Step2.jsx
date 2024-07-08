@@ -153,13 +153,7 @@ const Step2 = ({
           ))
         ) : (
           <>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 15,
-              }}
-            >
+            <div className={classes.customInputsGroup}>
               <div className={classes.inputWrapper}>
                 <div className={classes.labelWrapper}>
                   <label className={classes.label}>Մոդելը</label>
@@ -189,7 +183,7 @@ const Step2 = ({
               errors={errors}
               quantityRows={4}
             />
-            <div style={{ display: "flex", gap: 15, width: "100%" }}>
+            <div className={classes.inputsContainer}>
               <div className={classes.inputWrapper}>
                 <div className={classes.labelWrapper}>
                   <label className={classes.label}>Հաշվառման վկայագիր</label>
@@ -217,7 +211,7 @@ const Step2 = ({
                 )}
               </div>
             </div>
-            <div style={{ display: "flex", gap: 15, width: "100%" }}>
+            <div className={classes.inputGroup}>
               <div className={classes.inputWrapper}>
                 <div className={classes.labelWrapper}>
                   <label className={classes.label}>Սեփ․ վկայական</label>

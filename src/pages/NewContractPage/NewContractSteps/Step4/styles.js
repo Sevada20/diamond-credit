@@ -11,11 +11,11 @@ const useStyles = createUseStyles(
       },
       "&::-webkit-scrollbar-track": {
         background: "#d7d7e0",
-        borderRadius: theme.large,
+        borderRadius: theme.borderRadius.large,
       },
       "&::-webkit-scrollbar-thumb": {
         backgroundColor: "#b0a9ca",
-        borderRadius: theme.large,
+        borderRadius: theme.borderRadius.large,
         backgroundClip: "content-box",
       },
       "&::-webkit-scrollbar-thumb:hover": {
@@ -53,7 +53,7 @@ const useStyles = createUseStyles(
       cursor: "pointer",
     },
     label: {
-      fontSize: "1rem",
+      fontSize: 16,
       color: theme.labelColor,
     },
     valueContainer: {
@@ -62,8 +62,9 @@ const useStyles = createUseStyles(
       gap: 20,
     },
     value: {
-      fontSize: "1rem",
+      fontSize: 16,
       color: theme.primaryColor,
+      fontWeight: 500,
     },
     dataField: {
       display: "flex",
@@ -86,11 +87,11 @@ const useStyles = createUseStyles(
       gap: 5,
     },
     fileLabel: {
-      fontSize: "1rem",
+      fontSize: 16,
       color: theme.primaryColor,
     },
     input: {
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       padding: 10,
       backgroundColor: theme.backgroundBase,
       border: "none",
@@ -98,7 +99,7 @@ const useStyles = createUseStyles(
     uploadFileSpan: {
       color: theme.backgroundBase,
       backgroundColor: "#8788A1",
-      fontSize: "1rem",
+      fontSize: 16,
       borderRadius: "6px 0 0 6px",
       cursor: "pointer",
       padding: 7,
@@ -110,7 +111,7 @@ const useStyles = createUseStyles(
       width: "100%",
       color: theme.labelColor,
       backgroundColor: theme.backgroundBase,
-      fontSize: "1rem",
+      fontSize: 16,
       borderRadius: "0 6px 6px 0",
       padding: 7,
     },
@@ -134,7 +135,7 @@ const useStyles = createUseStyles(
       minWidth: "200px",
     },
     uploadFileBlock: {
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       display: "flex",
       alignItems: "center",
       overflowX: "auto",
@@ -143,11 +144,11 @@ const useStyles = createUseStyles(
       },
       "&::-webkit-scrollbar-track": {
         background: "#d7d7e0",
-        borderRadius: theme.large,
+        borderRadius: theme.borderRadius.large,
       },
       "&::-webkit-scrollbar-thumb": {
         backgroundColor: "#b0a9ca",
-        borderRadius: theme.large,
+        borderRadius: theme.borderRadius.large,
         backgroundClip: "content-box",
       },
       "&::-webkit-scrollbar-thumb:hover": {

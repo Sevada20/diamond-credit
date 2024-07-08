@@ -36,7 +36,7 @@ const useStyles = createUseStyles(
       borderBottom: `4px solid ${theme.textBase}`,
       ...baseStylesLinkImg,
     },
-    placeName: { fontSize: "2rem", color: theme.textBase, fontWeight: 600 },
+    placeName: { fontSize: 32, color: theme.textBase, fontWeight: 600 },
   }),
   {
     name: "signIn-selection-place-step",

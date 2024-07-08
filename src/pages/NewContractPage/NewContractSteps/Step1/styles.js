@@ -25,7 +25,7 @@ const useStyles = createUseStyles(
     },
     dateInput: {
       border: "none",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       width: "9.5%",
       padding: 10,
     },
@@ -36,12 +36,12 @@ const useStyles = createUseStyles(
       width: "100%",
     },
     label: {
-      fontSize: "1rem",
+      fontSize: 16,
       color: theme.primaryColor,
     },
     input: {
       border: "none",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       width: "100%",
       padding: "10px 13px",
     },

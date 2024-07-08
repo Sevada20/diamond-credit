@@ -25,11 +25,11 @@ const useStyles = createUseStyles(
       },
       "&::-webkit-scrollbar-track": {
         background: "#d7d7e0",
-        borderRadius: theme.large,
+        borderRadius: theme.borderRadius.large,
       },
       "&::-webkit-scrollbar-thumb": {
         backgroundColor: "#b0a9ca",
-        borderRadius: theme.large,
+        borderRadius: theme.borderRadius.large,
         backgroundClip: "content-box",
       },
       "&::-webkit-scrollbar-thumb:hover": {
@@ -47,7 +47,7 @@ const useStyles = createUseStyles(
       color: theme.textAlternativeBase,
       border: "none",
       padding: "5px 10px",
-      borderRadius: theme.medium,
+      borderRadius: theme.borderRadius.medium,
       cursor: "pointer",
       textDecoration: "none",
     },

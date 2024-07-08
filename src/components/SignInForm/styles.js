@@ -9,11 +9,14 @@ const useStyles = createUseStyles(
       gap: "15px",
     },
     signInBtnWrapper: {
-      marginTop: "2rem",
+      marginTop: 32,
       display: "flex",
       justifyContent: "center",
     },
-    formPasswordActions: { display: "flex", justifyContent: "space-between" },
+    formPasswordActions: {
+      display: "flex",
+      justifyContent: "space-between",
+    },
     checkboxGroup: {
       display: "flex",
       gap: "5px",
@@ -24,7 +27,7 @@ const useStyles = createUseStyles(
     signInBtn: {
       width: "50%",
       paddingBlock: "10px",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       backgroundColor: theme.primaryColor,
       color: "#fff",
       border: "none",

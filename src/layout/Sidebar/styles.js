@@ -10,11 +10,11 @@ const useStyles = createUseStyles(
     },
     logo: {
       paddingInline: 10,
-      fontSize: "18",
+      fontSize: 18,
       color: theme.primaryColor,
     },
     sidebarMenuContainer: {
-      paddingTop: "20px",
+      paddingTop: 20,
       height: "100%",
       display: "flex",
       flexDirection: "column",
@@ -22,11 +22,9 @@ const useStyles = createUseStyles(
       justifyContent: "space-between",
     },
     iconLink: {
-      width: "60px",
-      height: "60px",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      width: 60,
+      height: 60,
+      ...theme.mixins.flexCenter,
     },
     activeLink: {
       backgroundColor: theme.primaryColor,
@@ -34,7 +32,7 @@ const useStyles = createUseStyles(
     },
     iconsContainer: {
       display: "flex",
-      gap: "20px",
+      gap: 20,
       flexDirection: "column",
       justifyContent: "space-between",
     },
@@ -42,7 +40,7 @@ const useStyles = createUseStyles(
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      gap: "30px",
+      gap: 30,
     },
   }),
   {

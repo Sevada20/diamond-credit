@@ -5,8 +5,8 @@ const useStyles = createUseStyles(
     contractCard: {
       padding: "20px 20px 20px 30px",
       backgroundColor: theme.backgroundCard,
-      boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-      borderRadius: theme.medium,
+      boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+      borderRadius: theme.borderRadius.medium,
       borderLeft: ({ status }) => {
         if (status === true) {
           return `4px solid ${theme.successColor}`;
@@ -29,14 +29,14 @@ const useStyles = createUseStyles(
       color: theme.cardTextColor,
     },
     dateInfo: {
-      fontSize: "1rem",
+      fontSize: 16,
       color: theme.cardTextColor,
     },
     phonesInfoContainer: {
       display: "flex",
     },
     cardInfo: {
-      fontSize: "1rem",
+      fontSize: 16,
       display: "flex",
       flexDirection: "column",
       color: theme.primaryColor,

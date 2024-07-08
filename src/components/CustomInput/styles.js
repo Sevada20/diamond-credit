@@ -15,7 +15,7 @@ const useStyles = createUseStyles(
     input: {
       backgroundColor: theme.backgroundBase,
       width: "100%",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       border: "none",
       padding: 10,
       paddingLeft: ({ customStyles }) => customStyles?.paddingLeft,

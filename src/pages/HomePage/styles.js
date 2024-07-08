@@ -7,7 +7,7 @@ const useStyles = createUseStyles(
       alignItems: "center",
     },
     titleGreeting: {
-      fontSize: "1rem",
+      fontSize: 16,
       color: theme.textStrong,
     },
     firstSectionRow: {

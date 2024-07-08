@@ -6,7 +6,7 @@ const useStyles = createUseStyles(
       display: "flex",
     },
     mainLayout: {
-      padding: "20px 0px 00px 113px",
+      padding: "20px 0 0 113px",
       display: "flex",
       flexDirection: "column",
       backgroundColor: theme.backgroundMain,

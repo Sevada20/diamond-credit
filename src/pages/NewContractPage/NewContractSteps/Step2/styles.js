@@ -20,6 +20,16 @@ const useStyles = createUseStyles(
       gap: 15,
       width: "100%",
     },
+    customInputsGroup: {
+      display: "flex",
+      alignItems: "center",
+      gap: 15,
+    },
+    inputGroup: {
+      display: "flex",
+      gap: 15,
+      width: "100%",
+    },
     categoryInputsContainer: {
       display: "flex",
       flexWrap: "wrap",
@@ -33,12 +43,12 @@ const useStyles = createUseStyles(
       flex: "1 1 calc(33.333% - 10px)",
     },
     label: {
-      fontSize: "1rem",
+      fontSize: 16,
       color: theme.primaryColor,
     },
     input: {
       border: "none",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       width: "100%",
       padding: 10,
     },

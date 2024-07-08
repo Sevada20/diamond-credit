@@ -5,7 +5,7 @@ const useStyles = createUseStyles(
     contractFilter: {
       backgroundColor: theme.backgroundSecondary,
       padding: "17px 24px",
-      borderRadius: `${theme.large} ${theme.large} 0 ${theme.large}`,
+      borderRadius: `${theme.borderRadius.large} ${theme.borderRadius.large} 0 ${theme.borderRadius.large}`,
       marginBottom: 15,
     },
     inputsContainer: {
@@ -63,7 +63,7 @@ const useStyles = createUseStyles(
     leftInput: {
       backgroundColor: theme.backgroundBase,
       width: "100%",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       border: "none",
       padding: 10,
       marginTop: 6,
@@ -71,7 +71,7 @@ const useStyles = createUseStyles(
     rightInput: {
       backgroundColor: "transparent",
       width: "100%",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       border: `1px solid ${theme.textStrong}`,
       padding: "10px 30px",
       marginTop: 6,
@@ -79,7 +79,7 @@ const useStyles = createUseStyles(
     buttonsContainer: { marginTop: 20 },
     searchButton: {
       padding: "10px 24px",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       backgroundColor: theme.primaryColor,
       color: theme.backgroundBase,
       border: "none",

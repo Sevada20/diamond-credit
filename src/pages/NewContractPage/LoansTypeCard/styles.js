@@ -4,7 +4,7 @@ const useStyles = createUseStyles(
   (theme) => ({
     loansTypeCard: {
       background: "linear-gradient(180deg, #d4cee3, rgba(246, 245, 250, 0.2))",
-      borderRadius: theme.large,
+      borderRadius: theme.borderRadius.large,
       position: "relative",
       border: `0.5px solid ${theme.primaryColor}`,
       cursor: "pointer",
@@ -26,9 +26,6 @@ const useStyles = createUseStyles(
       color: theme.primaryColor,
     },
     loansTypeLogoContainer: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
       padding: 50,
       borderRadius: "50%",
       width: 50,
@@ -37,6 +34,7 @@ const useStyles = createUseStyles(
       position: "absolute",
       left: "50%",
       transform: "translateY(-50%) translateX(-50%)",
+      ...theme.mixins.flexCenter,
     },
     loansTypeLinks: {
       paddingLeft: 6,

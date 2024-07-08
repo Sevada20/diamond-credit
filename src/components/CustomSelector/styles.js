@@ -13,7 +13,7 @@ const useStyles = createUseStyles(
     select: {
       backgroundColor: theme.backgroundBase,
       width: "100%",
-      borderRadius: theme.small,
+      borderRadius: theme.borderRadius.small,
       border: "none",
       padding: 10,
       marginTop: 6,

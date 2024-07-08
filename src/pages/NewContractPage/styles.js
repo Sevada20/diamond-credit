@@ -11,11 +11,9 @@ const useStyles = createUseStyles(
     },
     newContractPage: {
       paddingInline: 180,
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
       gap: 62,
       height: "100%",
+      ...theme.mixins.flexCenter,
     },
     stepBackground: {
       backgroundImage: `url(${newContractBackground})`,
