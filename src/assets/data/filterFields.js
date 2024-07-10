@@ -99,6 +99,11 @@ export const mainFilters = [
   { id: 4, label: "Իրացված" },
   { id: 5, label: "Ժամկետանց" },
 ];
+export const contractsHistoryFilters = [
+  { id: 1, label: "Ընդհանուր" },
+  { id: 2, label: "Հաստատված" },
+  { id: 3, label: "Մերժված" },
+];
 
 export const contractsCategoryOptions = [
   {

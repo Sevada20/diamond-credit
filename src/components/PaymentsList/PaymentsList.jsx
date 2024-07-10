@@ -1,36 +1,32 @@
 import { useEffect, useRef, useState } from "react";
-import PaymentCard from "../PaymentCard/PaymentCard";
+import Modal from "@/UI/Modal/Modal";
 import menuIcon from "@/assets/icons/contractsIcons/menu.svg";
+import PaymentCard from "../PaymentCard/PaymentCard";
 import useStyles from "./styles";
 
 const PaymentsList = ({ payments }) => {
   const classes = useStyles();
   const [paymentsList, setPaymentsList] = useState(payments);
   const [showMenu, setShowMenu] = useState(false);
-  const menuRef = useRef(null);
   const menuIconRef = useRef(null);
 
-  const handleMenuClick = (event) => {
-    setShowMenu((prevShowMenu) => !prevShowMenu);
-  };
+  // const handleOutsideClick = (event) => {
+  //   if (
+  //     menuRef.current &&
+  //     !menuRef.current.contains(event.target) &&
+  //     menuIconRef.current &&
+  //     !menuIconRef.current.contains(event.target)
+  //   ) {
+  //     setShowMenu(false);
+  //   }
+  // };
 
-  const handleOutsideClick = (event) => {
-    if (
-      menuRef.current &&
-      !menuRef.current.contains(event.target) &&
-      menuIconRef.current &&
-      !menuIconRef.current.contains(event.target)
-    ) {
-      setShowMenu(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", handleOutsideClick);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleOutsideClick);
+  //   };
+  // }, []);
 
   const handleCheckboxChange = (id) => {
     const updatePayments = [...paymentsList];
@@ -45,15 +41,23 @@ const PaymentsList = ({ payments }) => {
         <span className={classes.paymentsListTitle}>No 15480</span>
         <img
           ref={menuIconRef}
-          onClick={handleMenuClick}
+          onClick={() => setShowMenu(!showMenu)}
           className={classes.menuIcon}
           src={menuIcon}
           alt="more icon"
         />
         {showMenu && (
-          <div className={classes.menu} ref={menuRef}>
-            <span className={classes.menuItem}>Տպել բոլոր փաստաթղթերը</span>
-            <span className={classes.menuItem}>Իրացնել գրավի առարկան</span>
+          <div className={classes.menuModalWrapper}>
+            <Modal
+              isOpen={showMenu}
+              onClose={() => setShowMenu(false)}
+              externalRef={menuIconRef}
+            >
+              <div className={classes.menu}>
+                <span className={classes.menuItem}>Տպել բոլոր փաստաթղթերը</span>
+                <span className={classes.menuItem}>Իրացնել գրավի առարկան</span>
+              </div>
+            </Modal>
           </div>
         )}
       </div>

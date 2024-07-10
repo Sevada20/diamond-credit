@@ -10,6 +10,8 @@ const useStyles = createUseStyles(
   (theme) => ({
     paymentsListContainer: {
       padding: 30,
+      backgroundColor: theme.backgroundBase,
+      borderRadius: theme.borderRadius.large,
     },
     paymentsListTitleContainer: {
       display: "flex",
@@ -26,11 +28,7 @@ const useStyles = createUseStyles(
     menuIcon: {
       cursor: "pointer",
     },
-    menu: {
-      padding: "30px 20px",
-      display: "flex",
-      flexDirection: "column",
-      gap: 20,
+    menuModalWrapper: {
       boxShadow: "0 4px 4px rgba(0, 0, 0, 0.25)",
       borderRadius: theme.borderRadius.small,
       backgroundColor: "#f5faff",
@@ -38,6 +36,12 @@ const useStyles = createUseStyles(
       right: 0,
       top: 30,
       zIndex: 1000,
+    },
+    menu: {
+      padding: "30px 20px",
+      display: "flex",
+      flexDirection: "column",
+      gap: 20,
     },
     menuItem: {
       fontSize: 18,

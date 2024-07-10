@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./styles";
 import toContractIcon from "@/assets/icons/contractsIcons/arrowRight.svg";
 
@@ -43,11 +44,13 @@ const ContractCard = ({
         </div>
         <span className={classes.cardInfo}>{type}</span>
         <span className={classes.cardInfo}>{percent}</span>
-        <img
-          className={classes.viewIcon}
-          src={toContractIcon}
-          alt="View Contract"
-        />
+        <Link to={`/contracts/${id}`}>
+          <img
+            className={classes.viewIcon}
+            src={toContractIcon}
+            alt="View Contract"
+          />
+        </Link>
       </div>
     </div>
   );
