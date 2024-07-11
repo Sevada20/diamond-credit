@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Modal from "@/UI/Modal/Modal";
 import menuIcon from "@/assets/icons/contractsIcons/menu.svg";
 import PaymentCard from "../PaymentCard/PaymentCard";
@@ -9,24 +9,6 @@ const PaymentsList = ({ payments }) => {
   const [paymentsList, setPaymentsList] = useState(payments);
   const [showMenu, setShowMenu] = useState(false);
   const menuIconRef = useRef(null);
-
-  // const handleOutsideClick = (event) => {
-  //   if (
-  //     menuRef.current &&
-  //     !menuRef.current.contains(event.target) &&
-  //     menuIconRef.current &&
-  //     !menuIconRef.current.contains(event.target)
-  //   ) {
-  //     setShowMenu(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", handleOutsideClick);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleOutsideClick);
-  //   };
-  // }, []);
 
   const handleCheckboxChange = (id) => {
     const updatePayments = [...paymentsList];

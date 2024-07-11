@@ -3,7 +3,11 @@ import { createUseStyles } from "react-jss";
 const useStyles = createUseStyles(
   (theme) => ({
     pageContainer: {
-      marginInline: 25,
+      display: "flex",
+      width: "100%",
+    },
+    mainContentContainer: {
+      marginInline: 15,
     },
     contractDescriptionContainer: {
       display: "flex",

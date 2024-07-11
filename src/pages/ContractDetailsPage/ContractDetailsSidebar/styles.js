@@ -23,7 +23,7 @@ const useStyles = createUseStyles(
       borderRadius: theme.borderRadius.large,
     },
     userInfoHeader: {
-      borderBottom: `1px solid ${theme.lineColor}`,
+      borderBottom: `1px solid ${theme.lightText}`,
       paddingBottom: 9,
     },
     userAvatar: {
@@ -44,6 +44,12 @@ const useStyles = createUseStyles(
       fontSize: 20,
       fontWeight: 600,
       color: theme.primaryColor,
+      whiteSpace: "nowrap",
+    },
+    userInfoRow: {
+      display: "flex",
+      alignItems: "center",
+      gap: 15,
     },
     userInfoHeaderContent: {
       display: "flex",
@@ -64,7 +70,7 @@ const useStyles = createUseStyles(
     },
     userContactsContainer: {
       ...userInfoBaseStyles,
-      borderBottom: `1px solid ${theme.lineColor}`,
+      borderBottom: `1px solid ${theme.lightText}`,
     },
     userContractDetailsContainer: {
       ...userInfoBaseStyles,

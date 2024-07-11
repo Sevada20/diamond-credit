@@ -2,28 +2,25 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles(
   (theme) => ({
-    applicationHistoryCard: {
-      display: "flex",
-      gap: "8%",
+    cardWrapper: {
+      width: "100%",
+      backgroundColor: theme.backgroundSecondary,
+      borderRadius: theme.borderRadius.large,
+      padding: "20px 22px",
+      marginTop: 10,
     },
-    date: {
-      fontSize: 14,
-      fontWeight: 600,
-      color: theme.labelSecondaryColor,
-    },
-    discount: {
-      fontSize: 14,
-      color: theme.textStrong,
-    },
-    approvedStatus: {
-      fontSize: 14,
-      color: ({ approved }) =>
-        approved ? theme.approvedColor : theme.rejectedColor,
+    historyId: {
+      fontSize: 16,
+      fontWeight: 700,
+      color: theme.idColor,
     },
     userContainer: {
       display: "flex",
       alignItems: "center",
       gap: 5,
+      borderTop: `0.3px solid ${theme.lightGray}`,
+      marginTop: 10,
+      paddingTop: 10,
     },
     userInfo: {
       display: "flex",
@@ -40,7 +37,7 @@ const useStyles = createUseStyles(
     },
   }),
   {
-    name: "application-history-card",
+    name: "Contract-details-card-wrapper",
   }
 );
 

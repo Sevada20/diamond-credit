@@ -17,12 +17,14 @@ export const light = {
   errorColor: "#DC0505",
   borderColor: "#5f6181",
   labelColor: "#666666",
-  lineColor: "#8788a1",
+  lightText: "#8788a1",
   backgroundInput: "#D7D7E0",
   labelSecondaryColor: "#042656",
   approvedColor: "#05603A",
   rejectedColor: "#600505",
   checkedBackground: "#fee7e7",
+  idColor: "#8833ff",
+  lightGray: "#b8b8b8",
 };
 
 export const borderRadius = {

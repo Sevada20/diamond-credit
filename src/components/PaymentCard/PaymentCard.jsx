@@ -23,8 +23,8 @@ const PaymentCard = ({
         {principalAmount && `${principalAmount} Դ`}
       </td>
       <td className={classes.tableCell}>Զեղչ</td>
-      <td className={`${classes.tableCell} ${classes.fileIcon}`}>
-        <img src={fileIcon} alt="file icon" />
+      <td className={`${classes.tableCell} ${classes.fileIconWrapper}`}>
+        <img className={classes.fileIcon} src={fileIcon} alt="file icon" />
       </td>
     </tr>
   );
