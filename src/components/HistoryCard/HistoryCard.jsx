@@ -1,7 +1,7 @@
 import { useState } from "react";
 import fileIcon from "@/assets/icons/contractsIcons/fileIcon.svg";
-import arrowUpIcon from "@/assets/icons/contractsIcons/arrowUpIcon.svg";
-import arrowDownIcon from "@/assets/icons/contractsIcons/arrowDownIcon.svg";
+import arrowUpIcon from "@/assets/icons/arrows/arrowUpIcon.svg";
+import arrowDownIcon from "@/assets/icons/arrows/arrowDownIcon.svg";
 import userAvatar from "@/assets/icons/contractsIcons/userAvatar.png";
 import styles from "./styles";
 import ContractDetailsCardWrapper from "../ContractDetailsCardWrapper/ContractDetailsCardWrapper";

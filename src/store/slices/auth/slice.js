@@ -1,18 +1,21 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
 import axios from "axios";
+import { axiosInstanceAuth } from "@/api/axiosInstance";
 
 const initialState = {
   user: null,
   isAuth: false,
   loading: false,
   error: null,
+  accessToken: null,
 };
 
 export const signIn = createAsyncThunk(
   "auth/signIn",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post("singin", userData);
+      const response = await axiosInstanceAuth.post("singin", userData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -44,6 +47,7 @@ const authSlice = createSlice({
       state.user = action.payload;
       state.isAuth = true;
       state.loading = false;
+      state.accessToken = action.payload.accessToken;
     });
     builder.addCase(signIn.rejected, (state, action) => {
       state.loading = false;

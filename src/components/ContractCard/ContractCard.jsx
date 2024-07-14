@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import toContractIcon from "@/assets/icons/arrows/arrowRight.svg";
 import styles from "./styles";
-import toContractIcon from "@/assets/icons/contractsIcons/arrowRight.svg";
 
 const ContractCard = ({
   status,

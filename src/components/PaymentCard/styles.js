@@ -12,7 +12,7 @@ const useStyles = createUseStyles(
     },
     tableCell: {
       textAlign: "left",
-      padding: "10px 10px 10px 56px",
+      padding: "10px 10px 10px 75px",
       fontSize: 16,
       color: theme.primaryColor,
       whiteSpace: "nowrap",
@@ -21,12 +21,13 @@ const useStyles = createUseStyles(
       fontSize: 14,
       color: theme.labelSecondaryColor,
     },
-    fileIconWrapper: {
+    discountWrapper: {
       borderRadius: `0 ${theme.borderRadius.mediumLarge}  ${theme.borderRadius.mediumLarge} 0`,
     },
-    fileIcon: {
+    discount: {
       padding: 5,
-      borderRadius: "50%",
+      color: theme.primaryColor,
+      borderRadius: theme.borderRadius.small,
       backgroundColor: theme.backgroundSecondary,
     },
   }),

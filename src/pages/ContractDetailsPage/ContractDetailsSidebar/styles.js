@@ -16,6 +16,16 @@ const baseButtonsStyles = {
 
 const useStyles = createUseStyles(
   (theme) => ({
+    sidebarWrapper: {
+      position: "relative",
+      minWidth: 70,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100%",
+      backgroundColor: theme.backgroundBase,
+      borderRadius: theme.borderRadius.large,
+    },
     contractDetailsSidebar: {
       padding: "30px 20px",
       backgroundColor: theme.backgroundBase,
@@ -56,6 +66,17 @@ const useStyles = createUseStyles(
       flexDirection: "column",
       alignItems: "center",
       gap: 7,
+    },
+    showSidebarIconWrapper: {
+      position: "absolute",
+      cursor: "pointer",
+      borderRadius: "50%",
+      width: 40,
+      height: 40,
+      backgroundColor: theme.backgroundMain,
+      top: "13%",
+      right: ({ showSidebar }) => (showSidebar ? "-5%" : "-23%"),
+      ...theme.mixins.flexCenter,
     },
     editButtonWrapper: {
       display: "flex",
@@ -107,6 +128,18 @@ const useStyles = createUseStyles(
       backgroundColor: theme.primaryColor,
       color: theme.backgroundBase,
       borderRadius: theme.borderRadius.small,
+    },
+    collapsedSidebarPlaceholder: {
+      display: "flex",
+      height: "100%",
+      backgroundColor: theme.backgroundBase,
+      borderRadius: theme.borderRadius.large,
+      paddingTop: 50,
+    },
+    userIcon: {
+      width: 24,
+      height: 24,
+      ...theme.mixins.flexCenter,
     },
   }),
   {

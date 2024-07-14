@@ -25,6 +25,9 @@ export const light = {
   checkedBackground: "#fee7e7",
   idColor: "#8833ff",
   lightGray: "#b8b8b8",
+  modalBackground: "#f5faff",
+  neutralColor: "Neutral",
+  lineLightColor: "#b5b5b5",
 };
 
 export const borderRadius = {

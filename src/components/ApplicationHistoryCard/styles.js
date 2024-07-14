@@ -14,6 +14,7 @@ const useStyles = createUseStyles(
     discount: {
       fontSize: 14,
       color: theme.textStrong,
+      whiteSpace: "nowrap",
     },
     approvedStatus: {
       fontSize: 14,

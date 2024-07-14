@@ -6,6 +6,12 @@ const baseButtonsStyles = {
   fontSize: 16,
 };
 
+const baseInputStyles = {
+  padding: 10,
+  border: "none",
+  boxShadow: "0 1px 4px rgba(0, 0, 0, 0.25)",
+};
+
 const useStyles = createUseStyles(
   (theme) => ({
     paymentsListContainer: {
@@ -80,10 +86,11 @@ const useStyles = createUseStyles(
     tableHeaderItem: {
       paddingBottom: 10,
       textAlign: "left",
-      paddingLeft: 60,
+      paddingLeft: 70,
     },
     tableHeaderItemFirst: {
       paddingBottom: 10,
+      paddingLeft: 10,
     },
     paymentOptionsContainer: {
       marginTop: 20,
@@ -109,6 +116,43 @@ const useStyles = createUseStyles(
       borderRadius: theme.borderRadius.small,
       color: theme.backgroundBase,
       backgroundColor: theme.primaryColor,
+    },
+    executionInfoHeaderContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 10,
+      borderBottom: `1px solid ${theme.lineLightColor}`,
+      paddingBottom: 25,
+    },
+    label: {
+      fontSize: 16,
+      color: theme.primaryColor,
+    },
+    executionInfoText: {
+      fontSize: 14,
+    },
+    amountInput: {
+      width: 700,
+      borderRadius: theme.borderRadius.small,
+      ...baseInputStyles,
+      fontSize: 18,
+    },
+    infoInput: {
+      ...baseInputStyles,
+      borderRadius: theme.borderRadius.small,
+      fontSize: 18,
+    },
+    inputContainer: {
+      display: "flex",
+      flexDirection: "column",
+      width: "100%",
+      gap: 10,
+    },
+    inputsContainer: {
+      display: "flex",
+      gap: 30,
+      width: "100%",
+      marginTop: 30,
     },
   }),
   {
