@@ -11,7 +11,7 @@ const HomePage = () => {
       </div>
       <div className={classes.firstSectionRow}>
         <FinancialCardList />
-        <div className={classes.line1}></div>
+        <div className={classes.container3}></div>
         <div className={classes.line2}></div>
       </div>
     </div>

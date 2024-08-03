@@ -32,8 +32,10 @@ const Sidebar = () => {
               >
                 <link.icon
                   color={index === activeLink ? theme.backgroundBase : "none"}
-                  color1={index === activeLink ? theme.backgroundBase : "none"}
-                  color2={
+                  statusColor1={
+                    index === activeLink ? theme.backgroundBase : "none"
+                  }
+                  statusColor2={
                     index === activeLink ? theme.backgroundBase : "#373962"
                   }
                 />
@@ -42,7 +44,9 @@ const Sidebar = () => {
           })}
         </div>
         <div className={classes.settingsContainer}>
-          <SettingsIcon />
+          <Link to="/profile-manager">
+            <SettingsIcon />
+          </Link>
           <ExitIcon />
         </div>
       </div>

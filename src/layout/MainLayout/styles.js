@@ -4,6 +4,7 @@ const useStyles = createUseStyles(
   (theme) => ({
     mainLayoutContainer: {
       display: "flex",
+      width: "100%",
     },
     mainLayout: {
       padding: "20px 0 0 113px",

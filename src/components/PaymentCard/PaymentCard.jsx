@@ -9,28 +9,24 @@ const PaymentCard = ({
   fine,
   principalAmount,
   onCheckboxChange,
+  handleOpenDiscountModal,
 }) => {
   const classes = useStyles({ isChecked });
 
   return (
     <tr className={classes.paymentCardContainer}>
-      <td className={classes.tableInputCell}>
-        <input
-          className={classes.input}
-          type="checkbox"
-          onChange={() => onCheckboxChange(id)}
-          checked={isChecked}
-        />
-        <label className={classes.paymentCardLabel}>{date}</label>
+      <td className={classes.tableDateCell}>
+        <span className={classes.paymentCardLabel}>{date}</span>
       </td>
-      <td className={classes.tableCell}>{percent}Դ</td>
-      <td className={classes.tableCell}>{fine}Դ</td>
+      <td className={classes.tableCell}>{percent} Դ</td>
+      <td className={classes.tableCell}>{fine} Դ</td>
       <td className={classes.tableCell}>
-        {principalAmount && `${principalAmount}Դ`}
+        {principalAmount && `${principalAmount} Դ`}
       </td>
-      <td className={classes.tableCell}>Զեղչ</td>
-      <td className={`${classes.tableCell} ${classes.fileIcon}`}>
-        <img src={fileIcon} alt="file icon" />
+      <td className={`${classes.tableCell} ${classes.discountWrapper}`}>
+        <span onClick={handleOpenDiscountModal} className={classes.discount}>
+          Զեղչ
+        </span>
       </td>
     </tr>
   );

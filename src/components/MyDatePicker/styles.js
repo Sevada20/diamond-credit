@@ -7,7 +7,8 @@ const useStyles = createUseStyles(
       width: "100%",
       borderRadius: theme.borderRadius.small,
       border: `1px solid ${theme.textStrong}`,
-      padding: "10px 33px",
+      padding: 10,
+      paddingLeft: "30px",
       marginTop: 6,
     },
     inputWithIcon: {
@@ -27,12 +28,10 @@ const useStyles = createUseStyles(
       fontSize: 8,
       color: theme.textStrong,
       position: "absolute",
-      // top: "0%",
       background: ({ customStyle }) =>
         customStyle ? customStyle : theme.backgroundSecondary,
       paddingInline: 6,
       left: 12,
-      // transform: "translateY(-50%)",
     },
   }),
   {

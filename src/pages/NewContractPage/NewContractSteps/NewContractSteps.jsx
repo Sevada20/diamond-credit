@@ -299,26 +299,28 @@ const NewContractSteps = ({
             <span className={classes.headerText}>ԱՐՔԱ հարցում</span>
             <span className={classes.headerText}>ՆՈՐՔ հարցում</span>
           </div>
-          <div className={classes.stepsWrapper}>{renderStep()}</div>
-          {currentStep === STEP_2 && (
-            <>
-              <div className={classes.customInputsGroupWrapper}>
-                <CustomInputsGroup
-                  inputFieldsData={inputFieldsData}
-                  register={register}
-                  errors={errors}
-                  category={watch("category")}
-                  quantityRows={3}
-                />
-              </div>
-              {watch("category") === "Տեխնիկա" && (
-                <div className={classes.descriptionContainer}>
-                  <label className={classes.label}>Նկարագրություն</label>
-                  <textarea className={classes.description} />
+          <div className={classes.newContractSteps}>
+            <div className={classes.stepsWrapper}>{renderStep()}</div>
+            {currentStep === STEP_2 && (
+              <>
+                <div className={classes.customInputsGroupWrapper}>
+                  <CustomInputsGroup
+                    inputFieldsData={inputFieldsData}
+                    register={register}
+                    errors={errors}
+                    category={watch("category")}
+                    quantityRows={3}
+                  />
                 </div>
-              )}
-            </>
-          )}
+                {watch("category") === "Տեխնիկա" && (
+                  <div className={classes.descriptionContainer}>
+                    <label className={classes.label}>Նկարագրություն</label>
+                    <textarea className={classes.description} />
+                  </div>
+                )}
+              </>
+            )}
+          </div>
         </div>
         <div className={classes.buttonsContainer}>
           <button type="button" className={classes.cancelBtn}>

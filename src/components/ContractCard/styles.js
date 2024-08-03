@@ -8,21 +8,23 @@ const useStyles = createUseStyles(
       boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
       borderRadius: theme.borderRadius.medium,
       borderLeft: ({ status }) => {
-        if (status === true) {
+        if (status === "completed") {
           return `4px solid ${theme.successColor}`;
-        } else if (!status) {
-          return `4px solid ${theme.warningColor}`;
-        } else {
+        } else if (status === "initial") {
           return `4px solid ${theme.accentColor}`;
+        } else {
+          return `4px solid ${theme.warningColor}`;
         }
       },
     },
     contractInnerCard: {
       width: "100%",
       display: "flex",
-      alignItems: "center",
       justifyContent: "space-between",
-      gap: 10,
+      alignItems: "center",
+    },
+    passportInfoContainer: {
+      display: "flex",
     },
     cardNumber: {
       fontSize: 20,

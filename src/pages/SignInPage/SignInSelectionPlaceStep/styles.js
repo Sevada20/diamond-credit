@@ -1,0 +1,48 @@
+import { createUseStyles } from "react-jss";
+import YerevanImg from "@/assets/images/Yerevan.png";
+import GyumriImg from "@/assets/images/Gyumri.png";
+
+const baseStylesLinkImg = {
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  border: "none",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  cursor: "pointer",
+  borderRadius: "30px 0px 30px 30px",
+};
+
+const useStyles = createUseStyles(
+  (theme) => ({
+    signInSelectionPlaceStep: {
+      display: "flex",
+      alignItems: "center",
+      margin: "0 auto",
+    },
+    imgLink: {
+      width: "210px",
+      height: "278px",
+      margin: "10px",
+      textDecoration: "none",
+    },
+    selectGyumriPawnshopIdBtn: {
+      backgroundImage: `url(${GyumriImg})`,
+      borderLeft: `4px solid ${theme.textBase}`,
+      borderBottom: `4px solid ${theme.textBase}`,
+      ...baseStylesLinkImg,
+    },
+    selectYerevanPawnshopIdBtn: {
+      backgroundImage: `url( ${YerevanImg})`,
+      borderLeft: `4px solid ${theme.textBase}`,
+      borderBottom: `4px solid ${theme.textBase}`,
+      ...baseStylesLinkImg,
+    },
+    placeName: { fontSize: 32, color: theme.textBase, fontWeight: 600 },
+  }),
+  {
+    name: "signIn-selection-place-step",
+  }
+);
+
+export default useStyles;

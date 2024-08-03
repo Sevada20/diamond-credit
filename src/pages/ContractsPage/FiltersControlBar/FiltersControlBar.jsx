@@ -1,7 +1,7 @@
 import downloadIcon from "@/assets/icons/contractsIcons/downloadIcon.svg";
 import filterIcon from "@/assets/icons/contractsIcons/filterIcon.svg";
-import arrowUpIcon from "@/assets/icons/contractsIcons/arrowUpIcon.svg";
-import arrowDownIcon from "@/assets/icons/contractsIcons/arrowDownIcon.svg";
+import arrowUpIcon from "@/assets/icons/arrows/arrowUpIcon.svg";
+import arrowDownIcon from "@/assets/icons/arrows/arrowDownIcon.svg";
 import styles from "./styles";
 
 const FiltersControlBar = ({ showFilters, setShowFilters }) => {

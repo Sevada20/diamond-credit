@@ -13,7 +13,7 @@ const ContractInfoCard = ({
   return (
     <div className={classes.contractInfoCard}>
       <div className={classes.icon}>
-        <IconComponent color2="#FFF3E8" />
+        <IconComponent statusColor2="#FFF3E8" />
       </div>
       <div className={classes.infoBlock}>
         <span className={classes.title}>{title}</span>
