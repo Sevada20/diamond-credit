@@ -9,6 +9,7 @@ const PaymentCard = ({
   fine,
   principalAmount,
   onCheckboxChange,
+  handleOpenDiscountModal,
 }) => {
   const classes = useStyles({ isChecked });
 
@@ -23,7 +24,9 @@ const PaymentCard = ({
         {principalAmount && `${principalAmount} Դ`}
       </td>
       <td className={`${classes.tableCell} ${classes.discountWrapper}`}>
-        <span className={classes.discount}>Զեղչ</span>
+        <span onClick={handleOpenDiscountModal} className={classes.discount}>
+          Զեղչ
+        </span>
       </td>
     </tr>
   );

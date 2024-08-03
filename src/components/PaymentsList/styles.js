@@ -37,7 +37,7 @@ const useStyles = createUseStyles(
     menuModalWrapper: {
       boxShadow: "0 4px 4px rgba(0, 0, 0, 0.25)",
       borderRadius: theme.borderRadius.small,
-      backgroundColor: "#f5faff",
+      backgroundColor: theme.modalBackground,
       position: "absolute",
       right: 0,
       top: 30,
@@ -104,18 +104,41 @@ const useStyles = createUseStyles(
       alignItems: "center",
       gap: 10,
     },
+    fullRepaymentOption: {
+      ...baseButtonsStyles,
+      borderRadius: theme.borderRadius.small,
+      color: ({ activePaymentOption }) =>
+        activePaymentOption === "Ամբողջական մարում"
+          ? theme.backgroundBase
+          : theme.primaryColor,
+      border: `1px solid ${theme.textStrong}`,
+      backgroundColor: ({ activePaymentOption }) =>
+        activePaymentOption === "Ամբողջական մարում"
+          ? theme.primaryColor
+          : theme.backgroundBase,
+    },
     paymentOptionButton: {
       ...baseButtonsStyles,
       borderRadius: theme.borderRadius.small,
-      color: theme.primaryColor,
+      color: ({ activePaymentOption }) =>
+        activePaymentOption === "Մասնակի մարում"
+          ? theme.backgroundBase
+          : theme.primaryColor,
       border: `1px solid ${theme.textStrong}`,
-      backgroundColor: theme.backgroundBase,
+      backgroundColor: ({ activePaymentOption }) =>
+        activePaymentOption === "Մասնակի մարում"
+          ? theme.primaryColor
+          : theme.backgroundBase,
     },
     payButton: {
       ...baseButtonsStyles,
       borderRadius: theme.borderRadius.small,
       color: theme.backgroundBase,
       backgroundColor: theme.primaryColor,
+      border: "none",
+    },
+    payButton2: {
+      backgroundColor: theme.buttonBackgroundSecondary,
     },
     executionInfoHeaderContainer: {
       display: "flex",
@@ -132,15 +155,16 @@ const useStyles = createUseStyles(
       fontSize: 14,
     },
     amountInput: {
-      width: 700,
       borderRadius: theme.borderRadius.small,
-      ...baseInputStyles,
       fontSize: 18,
+      color: theme.primaryColor,
+      ...baseInputStyles,
     },
     infoInput: {
       ...baseInputStyles,
       borderRadius: theme.borderRadius.small,
       fontSize: 18,
+      color: theme.primaryColor,
     },
     inputContainer: {
       display: "flex",
@@ -153,6 +177,42 @@ const useStyles = createUseStyles(
       gap: 30,
       width: "100%",
       marginTop: 30,
+    },
+    discountModalContainer: {
+      display: "flex",
+      gap: 41,
+    },
+    paymentsDetailsContainer: {
+      display: "flex",
+      alignItems: "center",
+      gap: 15,
+      marginTop: 30,
+    },
+    discount: {
+      padding: "10px 10px",
+      color: theme.primaryColor,
+      borderRadius: theme.borderRadius.small,
+      backgroundColor: theme.backgroundSecondary,
+      cursor: "pointer",
+    },
+    paymentQuantityInput: {
+      borderRadius: theme.borderRadius.small,
+      border: "none",
+      boxShadow: "0 1px 4px rgba(0, 0, 0, 0.25)",
+      padding: 9,
+      fontSize: 18,
+      color: theme.primaryColor,
+      width: "57%",
+    },
+    moneyInfoContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 22,
+    },
+    quantityMoney: {
+      fontSize: 18,
+      color: theme.primaryColor,
+      whiteSpace: "nowrap",
     },
   }),
   {

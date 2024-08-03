@@ -25,10 +25,11 @@ const useStyles = createUseStyles(
       borderRadius: `0 ${theme.borderRadius.mediumLarge}  ${theme.borderRadius.mediumLarge} 0`,
     },
     discount: {
-      padding: 5,
+      padding: "5px 10px",
       color: theme.primaryColor,
       borderRadius: theme.borderRadius.small,
       backgroundColor: theme.backgroundSecondary,
+      cursor: "pointer",
     },
   }),
   {

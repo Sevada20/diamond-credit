@@ -36,6 +36,38 @@ export const filtersFields = {
       label: "Որոշում",
     },
   ],
+  cashFlowFilterInputs: [
+    {
+      id: 1,
+      name: "name",
+      label: "Անուն",
+    },
+    {
+      id: 2,
+      name: "surname",
+      label: "Ազգանուն",
+    },
+    {
+      id: 3,
+      name: "patronymic",
+      label: "Հայրանուն",
+    },
+    {
+      id: 4,
+      name: "passport",
+      label: "Անձնագիր",
+    },
+    {
+      id: 5,
+      name: "phone",
+      label: "Հեռ.",
+    },
+    {
+      id: 6,
+      name: "delay",
+      label: "Ուշացում",
+    },
+  ],
 
   filterInputsSizeMoney: [
     {
@@ -43,26 +75,26 @@ export const filtersFields = {
       name: "providedFrom",
       label: "Տրամադրված",
       subLabel: "Սկսած",
-      placeholder: "10000",
+      placeholder: "10.000",
     },
     {
       id: 2,
       name: "providedTo",
       subLabel: "Մինչև",
-      placeholder: "1000000",
+      placeholder: "1.000.000",
     },
     {
       id: 3,
       name: "evaluatedFrom",
       label: "Գնահատված",
       subLabel: "Սկսած",
-      placeholder: "10000",
+      placeholder: "10.000",
     },
     {
       id: 4,
       name: "evaluatedTo",
       subLabel: "Մինչև",
-      placeholder: "1000000",
+      placeholder: "1.000.000",
     },
   ],
 
@@ -93,12 +125,21 @@ export const filtersFields = {
 };
 
 export const mainFilters = [
-  { id: 1, label: "Ընդհանուր" },
-  { id: 2, label: "Ակտիվ" },
-  { id: 3, label: "Փակված" },
-  { id: 4, label: "Իրացված" },
-  { id: 5, label: "Ժամկետանց" },
+  { id: 1, label: "Ընդհանուր", status: "all" },
+  { id: 2, label: "Ակտիվ", status: "initial" },
+  { id: 3, label: "Փակված", status: "completed" },
+  { id: 4, label: "Իրացված", status: "executed" },
+  { id: 5, label: "Ժամկետանց", status: "overdue" },
+  { id: 6, label: "Այսօրվա վճարումներ", status: "todays" },
 ];
+
+export const cashFlowMainFilters = [
+  { id: 1, label: "Պատմություն", filter: "cashFlowHistory" },
+  { id: 2, label: "Մուտք", filter: "cashFlowInput" },
+  { id: 3, label: "Ելք", filter: "cashFlowOutput" },
+  { id: 4, label: "Ծախս", filter: "cashFlowExpense" },
+];
+
 export const contractsHistoryFilters = [
   { id: 1, label: "Ընդհանուր" },
   { id: 2, label: "Հաստատված" },

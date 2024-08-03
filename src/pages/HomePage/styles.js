@@ -13,7 +13,7 @@ const useStyles = createUseStyles(
     firstSectionRow: {
       marginTop: 20,
       display: "grid",
-      gridTemplateColumns: "1fr 1fr 1fr 3fr 3fr",
+      gridTemplateColumns: "2fr 2fr 2fr 3fr 3fr",
       columnGap: "25px",
     },
   }),

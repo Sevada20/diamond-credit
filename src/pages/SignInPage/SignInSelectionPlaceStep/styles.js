@@ -1,13 +1,15 @@
 import { createUseStyles } from "react-jss";
-import YerevanImg from "../../assets/images/Yerevan.png";
-import GyumriImg from "../../assets/images/Gyumri.png";
+import YerevanImg from "@/assets/images/Yerevan.png";
+import GyumriImg from "@/assets/images/Gyumri.png";
 
 const baseStylesLinkImg = {
   backgroundSize: "cover",
   backgroundPosition: "center",
+  border: "none",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  cursor: "pointer",
   borderRadius: "30px 0px 30px 30px",
 };
 
@@ -24,13 +26,13 @@ const useStyles = createUseStyles(
       margin: "10px",
       textDecoration: "none",
     },
-    gyumriImgLink: {
+    selectGyumriPawnshopIdBtn: {
       backgroundImage: `url(${GyumriImg})`,
       borderLeft: `4px solid ${theme.textBase}`,
       borderBottom: `4px solid ${theme.textBase}`,
       ...baseStylesLinkImg,
     },
-    yerevanImgLink: {
+    selectYerevanPawnshopIdBtn: {
       backgroundImage: `url( ${YerevanImg})`,
       borderLeft: `4px solid ${theme.textBase}`,
       borderBottom: `4px solid ${theme.textBase}`,

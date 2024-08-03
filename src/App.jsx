@@ -10,24 +10,29 @@ import CalendarPage from "./pages/CalendarPage/CalendarPage";
 import TasksPage from "./pages/TasksPage/TasksPage";
 import ContractDetailsPage from "./pages/ContractDetailsPage/ContractDetailsPage";
 import ContractOverviewPage from "./pages/ContractOverviewPage/ContractOverviewPage";
+import PrivateRoute from "./pages/PrivateRoute/PrivateRoute";
+import ProfileManagerPage from "./pages/ProfileManagerPage/ProfileManagerPage";
 import "./globalStyles/global.css";
 
 function App() {
   return (
     <Routes>
       <Route path="/signIn" element={<SignInPage />} />
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/contracts" element={<ContractsPage />} />
-        <Route path="/contracts/:id" element={<ContractDetailsPage />}>
-          <Route index element={<ContractOverviewPage />} />
-          <Route path="customers" element={<CustomersPage />} />
+      <Route element={<PrivateRoute />}>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/contracts" element={<ContractsPage />} />
+          <Route path="/contracts/:id" element={<ContractDetailsPage />}>
+            <Route index element={<ContractOverviewPage />} />
+            <Route path="customers" element={<CustomersPage />} />
+          </Route>
+          <Route path="/profile-manager" element={<ProfileManagerPage />} />
+          <Route path="/new-contract" element={<NewContractPage />} />
+          <Route path="/customers" element={<CustomersPage />} />
+          <Route path="/cashier" element={<CashierPage />} />
+          <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="/tasks" element={<TasksPage />} />
         </Route>
-        <Route path="/new-contract" element={<NewContractPage />} />
-        <Route path="/customers" element={<CustomersPage />} />
-        <Route path="/cashier" element={<CashierPage />} />
-        <Route path="/calendar" element={<CalendarPage />} />
-        <Route path="/tasks" element={<TasksPage />} />
       </Route>
       <Route path="*" element={<div>Note found 404</div>} />
     </Routes>

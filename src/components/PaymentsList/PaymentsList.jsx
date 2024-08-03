@@ -6,10 +6,13 @@ import ComplexModal from "@/UI/ComplexModal/ComplexModal";
 import useStyles from "./styles";
 
 const PaymentsList = ({ payments }) => {
-  const classes = useStyles();
+  const [activePaymentOption, setActivePaymentOption] = useState(null);
+  const classes = useStyles({ activePaymentOption });
+  const [showPaymentsDetails, setShowPaymentsDetails] = useState(false);
   const [paymentsList, setPaymentsList] = useState(payments);
   const [showMenu, setShowMenu] = useState(false);
   const [executionModal, setExecutionModal] = useState(false);
+  const [showDiscountModal, setShowDiscountModal] = useState(false);
   const menuIconRef = useRef(null);
 
   const handleCheckboxChange = (id) => {
@@ -70,6 +73,7 @@ const PaymentsList = ({ payments }) => {
           {paymentsList.map((payment) => (
             <PaymentCard
               {...payment}
+              handleOpenDiscountModal={() => setShowDiscountModal(true)}
               onCheckboxChange={handleCheckboxChange}
               key={payment.id}
             />
@@ -86,22 +90,48 @@ const PaymentsList = ({ payments }) => {
       </div>
       <div className={classes.paymentOptionsContainer}>
         <div className={classes.paymentOptionButtons}>
-          <span className={classes.paymentOptionButton}>
-            Վճարողական գումարը
+          <span
+            onClick={() => {
+              setShowPaymentsDetails(true);
+              setActivePaymentOption("Ամբողջական մարում");
+            }}
+            className={classes.fullRepaymentOption}
+          >
+            Ամբողջական մարում
           </span>
-          <span className={classes.paymentOptionButton}>
-            Վճարողական գումարը
+          <span
+            onClick={() => {
+              setActivePaymentOption("Մասնակի մարում");
+              setShowPaymentsDetails(false);
+            }}
+            className={classes.paymentOptionButton}
+          >
+            Մասնակի մարում
           </span>
         </div>
-        <span className={classes.payButton}>Վճարել</span>
+        {!(activePaymentOption === "Ամբողջական մարում") && (
+          <button className={classes.payButton}>Վճարել</button>
+        )}
       </div>
+      {showPaymentsDetails && (
+        <div className={classes.paymentsDetailsContainer}>
+          <input
+            className={classes.paymentQuantityInput}
+            placeholder="108.530Դ"
+          />
+          <button className={`${classes.payButton} ${classes.payButton2}`}>
+            Վճարել
+          </button>
+          <span className={classes.discount}>Զեղչ</span>
+        </div>
+      )}
       {executionModal && (
         <ComplexModal
           isOpen={executionModal}
           onClose={() => setExecutionModal(false)}
           title="Իրացում"
           confirmBtnText="Իրացնել"
-          confirmCallback={() => console.log("hello")}
+          confirmCallback={() => console.log("show complex modal")}
         >
           <div className={classes.executionContainer}>
             <div className={classes.executionInfoHeaderContainer}>
@@ -124,6 +154,26 @@ const PaymentsList = ({ payments }) => {
                 <label className={classes.label}>Գնորդի տվյալներ</label>
                 <input className={classes.infoInput} placeholder="Վահանակ 11" />
               </div>
+            </div>
+          </div>
+        </ComplexModal>
+      )}
+      {showDiscountModal && (
+        <ComplexModal
+          isOpen={showDiscountModal}
+          onClose={() => setShowDiscountModal(false)}
+          title="Զեղչ"
+          confirmBtnText="Հարցում"
+          confirmCallback={() => console.log("show discount modal")}
+        >
+          <div className={classes.discountModalContainer}>
+            <div className={classes.moneyInfoContainer}>
+              <span className={classes.label}>Գումար</span>
+              <span className={classes.quantityMoney}> 5.000 Դ</span>
+            </div>
+            <div className={classes.inputContainer}>
+              <label className={classes.label}>Զեղչ</label>
+              <input className={classes.infoInput} />
             </div>
           </div>
         </ComplexModal>

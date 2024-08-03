@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SignInMainStep from "@/components/SignInMainStep/SignInMainStep";
-import SignInSelectionPlaceStep from "@/components/SignInSelectionPlaceStep/SignInSelectionPlaceStep";
+import SignInSelectionPlaceStep from "./SignInSelectionPlaceStep/SignInSelectionPlaceStep";
+import SignInMainStep from "./SignInMainStep/SignInMainStep";
 import styles from "./styles";
 
 const SignInPage = () => {

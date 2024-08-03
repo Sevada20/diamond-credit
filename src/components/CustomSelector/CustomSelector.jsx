@@ -6,7 +6,7 @@ const CustomSelector = ({
   register,
   name,
   defaultValue,
-  customStyles = { fontSize: 14, fontWeight: 500 },
+  customStyles = { fontSize: 14, fontWeight: 400 },
   errors,
 }) => {
   const classes = styles({ customStyles });

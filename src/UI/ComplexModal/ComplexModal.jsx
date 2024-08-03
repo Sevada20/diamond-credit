@@ -8,8 +8,9 @@ const ComplexModal = ({
   title,
   confirmBtnText,
   confirmCallback,
+  customWidth,
 }) => {
-  const classes = styles();
+  const classes = styles({ customWidth });
   const modalRef = useRef(null);
 
   const handleOutsideClick = (event) => {

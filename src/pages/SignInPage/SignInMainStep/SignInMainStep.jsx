@@ -1,7 +1,7 @@
 import { useState } from "react";
-import SignInForm from "../SignInForm/SignInForm";
+import getText from "@/utils/texts";
+import SignInForm from "@/components/SignInForm/SignInForm";
 import styles from "./styles";
-import getText from "../../utils/texts";
 const SignInMainStep = ({ nextStep }) => {
   const classes = styles();
   const [activeOption, setActiveOption] = useState("signIn");
