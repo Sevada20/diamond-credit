@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { managerMenuItems } from "@/assets/data/menuManagerProfile";
 import GeneralInfo from "./GeneralInfo/GeneralInfo";
 import Users from "./Users/Users";
@@ -6,11 +6,16 @@ import Conditions from "./Conditions/Conditions";
 import Deals from "./Deals/Deals";
 import styles from "./styles";
 const ProfileManagerPage = () => {
-  const [selectedMenu, setSelectedMenu] = useState("general");
+  const { name } = useParams();
+  const navigate = useNavigate();
   const classes = styles();
 
+  const updateUrl = (url) => {
+    navigate(`/profile-manager/${url}`);
+  };
+
   const renderContent = () => {
-    switch (selectedMenu) {
+    switch (name) {
       case "general":
         return <GeneralInfo />;
       case "users":
@@ -18,6 +23,8 @@ const ProfileManagerPage = () => {
       case "conditions":
         return <Conditions />;
       case "deals":
+        return <Deals />;
+      case "add-user-steps":
         return <Deals />;
       default:
         return <GeneralInfo />;
@@ -32,10 +39,10 @@ const ProfileManagerPage = () => {
           {managerMenuItems.map((item) => (
             <span
               className={`${classes.menuItem} ${
-                selectedMenu === item.title ? classes.active : ""
+                name === item.title ? classes.active : ""
               }`}
               key={item.title}
-              onClick={() => setSelectedMenu(item.title)}
+              onClick={() => updateUrl(item.title)}
             >
               {item.label}
             </span>

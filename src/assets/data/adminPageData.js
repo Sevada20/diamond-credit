@@ -1,8 +1,8 @@
 export const adminPageAddUserInputFields = [
-  { name: "name", label: "Անուն" },
-  { name: "surname", label: "Ազգանուն" },
-  { name: "patronymicName", label: "Հայրանուն" },
-  { name: "position", label: "Մենեջեր" },
-  { name: "phone", label: "Հեռախոսահամար" },
-  { name: "email", label: "Էլ․հասցե" },
+  { name: "name", title: "Անուն", label: "Արմինե" },
+  { name: "surname", title: "Ազգանուն", label: "Մինասյան" },
+  { name: "patronymicName", title: "Հայրանուն", label: "․․․" },
+  { name: "position", title: "Հաստիք", label: "Մենեջեր" },
+  { name: "phone", title: "Հեռախոսահամար", label: "(374) 00 00 00 00" },
+  { name: "email", title: "Էլ․հասցե", label: "example@gmail.com" },
 ];

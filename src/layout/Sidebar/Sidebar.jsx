@@ -44,7 +44,7 @@ const Sidebar = () => {
           })}
         </div>
         <div className={classes.settingsContainer}>
-          <Link to="/profile-manager">
+          <Link to="/profile-manager/general">
             <SettingsIcon />
           </Link>
           <ExitIcon />

@@ -4,12 +4,7 @@ import UsersFilters from "../UsersFilters/UsersFilters";
 import ActiveUsersList from "../ActiveUsersList/ActiveUsersList";
 import styles from "./styles";
 
-const UsersDashboard = ({
-  showFilters,
-  setShowFilters,
-  users,
-  setCurrentStep,
-}) => {
+const UsersDashboard = ({ showFilters, setShowFilters, users, updateUrl }) => {
   const classes = styles();
 
   return (
@@ -17,8 +12,8 @@ const UsersDashboard = ({
       <div className={classes.header}>
         <span className={classes.title}>Օգտատերեր</span>
         <button
-          onClick={() => setCurrentStep("add-user-steps")}
           className={classes.addButton}
+          onClick={() => updateUrl("add-user-steps", 1)}
         >
           <img src={addIcon} alt="add icon" />
           <span className={classes.addButtonText}>Ավելացնել</span>

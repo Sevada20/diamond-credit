@@ -75,17 +75,17 @@ export const stepIndicatorsData = [
 export const adminPageStepIndicators = [
   {
     id: 1,
-    key: "add-user-steps",
+    key: "step=1",
     name: "Տվյալներ",
   },
   {
     id: 2,
-    key: "add-user-steps2",
+    key: "step=2",
     name: "Արտոնություններ",
   },
   {
     id: 3,
-    key: "add-user-steps3",
+    key: "step=3",
     name: "Ամփոփում",
   },
 ];

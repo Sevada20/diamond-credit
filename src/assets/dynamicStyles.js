@@ -40,6 +40,7 @@ export const light = {
   statusColor3: "#a838ff",
   activeCard: "#c1d4ef",
   lightPurple: "#9992c8",
+  darkGray: "#999999",
   darkBlue: "#cdedff",
   roleColor1: "#f5d5c3",
   roleColor2: "#d3cbf6",

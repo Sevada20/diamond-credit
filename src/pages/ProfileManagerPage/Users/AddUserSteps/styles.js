@@ -14,6 +14,12 @@ const useStyles = createUseStyles(
       alignItems: "center",
       position: "relative",
     },
+    stepsContainer: {
+      backgroundColor: theme.backgroundBase,
+      padding: 50,
+      borderRadius: theme.borderRadius.large,
+      marginTop: 25,
+    },
     stepIndicator: {
       fontSize: 20,
       color: theme.backgroundBase,
@@ -31,6 +37,32 @@ const useStyles = createUseStyles(
       height: 0.5,
       backgroundColor: theme.primaryColor,
       marginBlock: 22,
+    },
+    buttonsContainer: {
+      display: "flex",
+      justifyContent: "flex-end",
+      gap: 15,
+      marginTop: 18,
+    },
+    button: {
+      padding: "10px 24px",
+      borderRadius: theme.borderRadius.small,
+      fontSize: 16,
+      cursor: "pointer",
+      border: "none",
+    },
+    changePageBtn: {
+      backgroundColor: theme.lightPurple,
+      color: theme.backgroundInput,
+    },
+    submitBtn: {
+      backgroundColor: theme.backgroundBase,
+      color: theme.primaryColor,
+      border: `1px solid ${theme.primaryColor}`,
+    },
+    continueBtn: {
+      backgroundColor: theme.primaryColor,
+      color: theme.textBase,
     },
   }),
   {

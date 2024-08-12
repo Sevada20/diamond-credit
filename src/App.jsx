@@ -26,7 +26,10 @@ function App() {
             <Route index element={<ContractOverviewPage />} />
             <Route path="customers" element={<CustomersPage />} />
           </Route>
-          <Route path="/profile-manager" element={<ProfileManagerPage />} />
+          <Route
+            path="/profile-manager/:name"
+            element={<ProfileManagerPage />}
+          />
           <Route path="/new-contract" element={<NewContractPage />} />
           <Route path="/customers" element={<CustomersPage />} />
           <Route path="/cashier" element={<CashierPage />} />

@@ -2,12 +2,7 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles(
   (theme) => ({
-    step1Container: {
-      backgroundColor: theme.backgroundBase,
-      padding: 50,
-      borderRadius: theme.borderRadius.large,
-      marginTop: 25,
-    },
+    step1Container: {},
     title: {
       fontSize: 24,
       fontWeight: 500,
@@ -40,11 +35,26 @@ const useStyles = createUseStyles(
       width: 65,
     },
     input: {
+      fontSize: 16,
+      color: theme.primaryColor,
       borderRadius: theme.borderRadius.small,
       padding: 10,
       border: "none",
       backgroundColor: theme.backgroundBase,
       boxShadow: "0 0 5px rgba(0, 0, 0, 0.3)",
+    },
+    divider: {
+      marginBlock: 20,
+      height: 0.3,
+      width: "100%",
+      backgroundColor: theme.border,
+      margin: "10px 0",
+    },
+    mainDataContainer: {
+      width: "27%",
+      display: "flex",
+      flexDirection: "column",
+      gap: 20,
     },
   }),
   {
