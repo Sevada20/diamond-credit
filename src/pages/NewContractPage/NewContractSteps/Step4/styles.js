@@ -98,7 +98,7 @@ const useStyles = createUseStyles(
     },
     uploadFileSpan: {
       color: theme.backgroundBase,
-      backgroundColor: "#8788A1",
+      backgroundColor: theme.lightText,
       fontSize: 16,
       borderRadius: "6px 0 0 6px",
       cursor: "pointer",

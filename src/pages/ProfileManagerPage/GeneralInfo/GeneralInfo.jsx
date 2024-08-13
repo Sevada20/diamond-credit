@@ -5,6 +5,7 @@ import styles from "./styles";
 import UserDocuments from "./UserDocuments/UserDocuments";
 const GeneralInfo = () => {
   const classes = styles();
+
   return (
     <div className={classes.generalInfoContainer}>
       <div className={classes.userInfoContainer}>
