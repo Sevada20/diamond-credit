@@ -5,6 +5,8 @@ import styles from "./styles";
 import RenderInputs from "./RenderInputs/RenderInputs";
 
 const AddDocument = ({
+  setShowAddDocument,
+  showAddDocument,
   removeFile,
   formData,
   handleInputChange,
@@ -18,6 +20,7 @@ const AddDocument = ({
 
   return (
     <div className={classes.addDocumentContainer}>
+      <span className={classes.title}>Նոր Փաստաթղթուղթ</span>
       <div className={classes.documentTypeContainer}>
         <div className={classes.documentTypeWrapper}>
           <span className={classes.selectLabel}>Տեսակ</span>
@@ -29,7 +32,11 @@ const AddDocument = ({
           >
             <option value="">Ընտրել փաստաթուղթ</option>
             {addNewDocumentSelectOptions.map((option) => (
-              <option key={option.id} value={option.value}>
+              <option
+                className={classes.selectOption}
+                key={option.id}
+                value={option.value}
+              >
                 {option.label}
               </option>
             ))}
@@ -70,6 +77,22 @@ const AddDocument = ({
         </div>
       </div>
       <RenderInputs formData={formData} handleInputChange={handleInputChange} />
+      {showAddDocument && (
+        <div className={classes.actionButtonsContainer}>
+          <button
+            onClick={() => setShowAddDocument(false)}
+            className={classes.cancelButton}
+          >
+            Չեղարկել
+          </button>
+          <button
+            onClick={() => setShowAddDocument(false)}
+            className={classes.saveButton}
+          >
+            Պահպանել
+          </button>
+        </div>
+      )}
     </div>
   );
 };

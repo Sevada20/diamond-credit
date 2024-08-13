@@ -79,6 +79,11 @@ const useStyles = createUseStyles(
         background: theme.darkBlue,
       },
     },
+    divider: {
+      width: "100%",
+      height: 0.3,
+      backgroundColor: theme.darkGray,
+    },
   }),
   {
     name: "user-documents",

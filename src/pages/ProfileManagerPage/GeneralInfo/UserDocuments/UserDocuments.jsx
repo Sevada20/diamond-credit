@@ -60,7 +60,7 @@ const UserDocuments = () => {
   return (
     <div className={classes.userDocumentsContainer}>
       <div className={classes.userDocumentsHeader}>
-        <span className={classes.title}>Անձնական տվյալներ</span>
+        <span className={classes.title}>Փաստաթղթեր</span>
         <img
           ref={menuIconRef}
           onClick={() => setShowMenu(!showMenu)}
@@ -125,14 +125,19 @@ const UserDocuments = () => {
         </div>
       </div>
       {showAddDocument && (
-        <AddDocument
-          handleFileClick={handleFileClick}
-          removeFile={removeFile}
-          handleFileChange={handleFileChange}
-          formData={formData}
-          handleInputChange={handleInputChange}
-          handleDocumentTypeChange={handleDocumentTypeChange}
-        />
+        <>
+          <div className={classes.divider}></div>
+          <AddDocument
+            setShowAddDocument={setShowAddDocument}
+            showAddDocument={showAddDocument}
+            handleFileClick={handleFileClick}
+            removeFile={removeFile}
+            handleFileChange={handleFileChange}
+            formData={formData}
+            handleInputChange={handleInputChange}
+            handleDocumentTypeChange={handleDocumentTypeChange}
+          />
+        </>
       )}
     </div>
   );

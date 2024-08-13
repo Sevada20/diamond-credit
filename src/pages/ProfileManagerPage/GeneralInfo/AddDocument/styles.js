@@ -1,7 +1,18 @@
 import { createUseStyles } from "react-jss";
 
+const baseStylesButtons = {
+  border: "none",
+  cursor: "pointer",
+  padding: "10px 24px",
+};
+
 const useStyles = createUseStyles(
   (theme) => ({
+    title: {
+      fontSize: 16,
+      fontWeight: 500,
+      color: theme.primaryColor,
+    },
     addDocumentContainer: {
       display: "flex",
       flexDirection: "column",
@@ -34,6 +45,9 @@ const useStyles = createUseStyles(
       border: "none",
       borderRadius: theme.borderRadius.small,
       padding: 10,
+    },
+    selectOption: {
+      color: theme.primaryColor,
     },
     uploadFileSpan: {
       color: theme.backgroundBase,
@@ -93,6 +107,8 @@ const useStyles = createUseStyles(
       width: "100%",
     },
     uploadFile: {
+      display: "flex",
+      paddingRight: 10,
       borderRadius: theme.borderRadius.small,
       boxShadow: "0 0 5px rgba(0, 0, 0, 0.3)",
       width: "100%",
@@ -102,6 +118,23 @@ const useStyles = createUseStyles(
     statusUploadedText: {
       whiteSpace: "nowrap",
       minWidth: "200px",
+    },
+    actionButtonsContainer: {
+      display: "flex",
+      justifyContent: "flex-end",
+      gap: 10,
+    },
+    cancelButton: {
+      ...baseStylesButtons,
+      backgroundColor: theme.lightPurple,
+      borderRadius: theme.borderRadius.small,
+      color: theme.textSecondary,
+    },
+    saveButton: {
+      ...baseStylesButtons,
+      backgroundColor: theme.primaryColor,
+      color: theme.textBase,
+      borderRadius: theme.borderRadius.small,
     },
   }),
   {
