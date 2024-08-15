@@ -6,6 +6,7 @@ const useStyles = createUseStyles(
       display: "flex",
       gap: 22,
       padding: "0 30px 20px 30px",
+      minHeight: "100vh",
     },
     contentBlock: {
       width: "80%",

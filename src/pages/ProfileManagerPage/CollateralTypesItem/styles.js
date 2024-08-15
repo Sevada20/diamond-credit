@@ -35,6 +35,7 @@ const useStyles = createUseStyles(
       gap: 5,
     },
     mainListItem: {
+      cursor: "pointer",
       backgroundColor: theme.modalBackground,
       padding: "5px 20px",
       borderRadius: theme.borderRadius.secondaryMedium,
