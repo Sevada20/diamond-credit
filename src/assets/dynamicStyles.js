@@ -25,6 +25,7 @@ export const light = {
   accentColor: "#0E43FF",
   errorColor: "#DC0505",
   borderColor: "#5f6181",
+  mediumBlue: "#0085ff",
   labelColor: "#666666",
   labelSecondaryColor: "#042656",
   approvedColor: "#05603A",
@@ -44,6 +45,8 @@ export const light = {
   darkBlue: "#cdedff",
   roleColor1: "#f5d5c3",
   roleColor2: "#d3cbf6",
+  gold: "#ffb800",
+  violet: "#fa00ff",
 };
 
 export const borderRadius = {
