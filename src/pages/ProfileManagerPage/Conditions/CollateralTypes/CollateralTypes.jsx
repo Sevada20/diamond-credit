@@ -11,6 +11,10 @@ const CollateralTypes = () => {
           <CollateralTypesItem key={item.id} {...item} />
         ))}
       </div>
+      <div className={classes.addButtonContainer}>
+        <div className={classes.line}></div>
+        <span className={classes.addButtonText}>Ավելացնել</span>
+      </div>
     </div>
   );
 };

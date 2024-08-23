@@ -11,7 +11,11 @@ const ProfileManagerPage = () => {
   const classes = styles();
 
   const updateUrl = (url) => {
-    navigate(`/profile-manager/${url}`);
+    if (url === "conditions") {
+      navigate(`/profile-manager/${url}?section=percent`);
+    } else {
+      navigate(`/profile-manager/${url}`);
+    }
   };
 
   const renderContent = () => {

@@ -1,8 +1,8 @@
 import { adminAdvantagesCheckboxes } from "@/assets/data/advantageCheckboxes";
-import showAdvantagesIcon from "@/assets/icons/plusIcon.svg";
 import hideAdvantagesIcon from "@/assets/icons/iconMinus.svg";
 import styles from "./styles";
 import { useState } from "react";
+import PlusIcon from "../../../../../assets/icons/PlusIcon";
 const Step2 = ({ register }) => {
   const classes = styles();
   const [openBlocks, setOpenBlocks] = useState({});
@@ -31,11 +31,7 @@ const Step2 = ({ register }) => {
                 {openBlocks[item.id] ? (
                   <img src={hideAdvantagesIcon} alt="hide advantages" />
                 ) : (
-                  <img
-                    className={classes.showAdvantagesIcon}
-                    src={showAdvantagesIcon}
-                    alt="show advantages"
-                  />
+                  <PlusIcon color="white" />
                 )}
               </div>
               <span className={classes.label}>{item.label}</span>

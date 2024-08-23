@@ -120,3 +120,196 @@ export const collateralTypes = [
     ],
   },
 ];
+
+export const branches = [
+  {
+    id: 1,
+    name: "Գյումրու",
+    license: "ԳԱ 1235154",
+    employees: 8,
+    insurance: 65000000,
+    involved: 26500000,
+    director: 3113153,
+    teamLeader: 3335534,
+    customerServiceSpecialist: 3153153,
+    creditSpecialist: 311315453,
+    jeweler: 654684,
+  },
+  {
+    id: 2,
+    name: "Երևանի",
+    license: "ԳԱ 1235154",
+    employees: 8,
+    insurance: 65000000,
+    involved: 26500000,
+    director: 3113153,
+    teamLeader: 3335534,
+    customerServiceSpecialist: 3153153,
+    creditSpecialist: 311315453,
+    jeweler: 654684,
+  },
+];
+
+export const branchesListTitles = [
+  {
+    id: 1,
+    title: "Լիցենզիա",
+  },
+  {
+    id: 2,
+    title: "Աշխատակիցներ",
+  },
+  {
+    id: 3,
+    title: "Ապպա",
+  },
+  {
+    id: 4,
+    title: "Ներգրավված",
+  },
+];
+
+export const percentList = [
+  {
+    id: 1,
+    title: "Տեխնիկա",
+    labelFrom: "Սկսած",
+    labelTo: "Մինչև",
+    percent: 0.13,
+    percents: [],
+  },
+  {
+    id: 1,
+    title: "Ոսկի",
+    labelFrom: "Սկսած",
+    labelTo: "Մինչև",
+    percents: [
+      {
+        id: 1,
+        labelFrom: "Սկսած",
+        labelTo: "Մինչև",
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 2,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 3,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 4,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 5,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 6,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Մեքենա",
+    labelFrom: "Սկսած",
+    labelTo: "Մինչև",
+    percents: [
+      {
+        id: 1,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 2,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 3,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 4,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 5,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 6,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Միանվագ վճար",
+    labelFrom: "Սկսած",
+    labelTo: "Մինչև",
+    percents: [
+      {
+        id: 1,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 2,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 3,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 4,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 5,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+      {
+        id: 6,
+        from: 10000,
+        to: 1000000,
+        percent: 0.13,
+      },
+    ],
+  },
+];

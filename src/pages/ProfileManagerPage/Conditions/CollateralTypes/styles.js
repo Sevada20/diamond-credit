@@ -10,6 +10,21 @@ const useStyles = createUseStyles(
       fontWeight: 700,
       color: theme.primaryColor,
     },
+    addButtonContainer: {
+      paddingRight: 45,
+    },
+    addButtonText: {
+      fontSize: 12,
+      fontWeight: 500,
+      color: theme.primaryColor,
+      cursor: "pointer",
+    },
+    line: {
+      height: 0.3,
+      width: "100%",
+      backgroundColor: theme.borderColor,
+      marginTop: 10,
+    },
     categoriesContainer: {
       display: "flex",
       flexDirection: "column",
