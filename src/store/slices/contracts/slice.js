@@ -26,8 +26,7 @@ export const getContracts = createAsyncThunk(
       const response = await $api.get("get-contracts", {
         params: { page, limit: 6, ...filters },
       });
-      console.log(response.data, "response.data>>>>>");
-      return response.data;
+      return response?.data;
     } catch (error) {
       return rejectWithValue(error.message);
     }

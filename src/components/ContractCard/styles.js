@@ -12,6 +12,8 @@ const useStyles = createUseStyles(
           return `4px solid ${theme.successColor}`;
         } else if (status === "initial") {
           return `4px solid ${theme.accentColor}`;
+        } else if (status === "overdue") {
+          return `4px solid ${theme.overdueColor}`;
         } else {
           return `4px solid ${theme.warningColor}`;
         }

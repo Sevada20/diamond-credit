@@ -3,13 +3,25 @@ import {
   tasks,
   moneyOutAndIn,
 } from "@/assets/data/documentsData";
+import { clients } from "@/assets/data/clients";
+import { useTheme } from "react-jss";
+import PieChart from "@/components/PieChart/PieChart";
 import FinancialCardList from "@/components/FinancialCardList/FinancialCardList";
 import greetingIcon from "@/assets/icons/homePageIcons/greetingIcon.svg";
 import DocumentList from "./DocumentList/DocumentList";
 import Tasks from "./Tasks/Tasks";
 import MoneyOutAndInCard from "./MoneyOutAndInCard/MoneyOutAndInCard";
+import Clients from "./Clients/Clients";
+import InflationCard from "./InflationCard/InflationCard";
+import lightningIcon from "@/assets/icons/lightningIcon.svg";
+import percentIcon from "@/assets/icons/percentIcon.svg";
 import styles from "./styles";
+import LoanContractsChart from "./LoanContractsChart/LoanContractsChart";
+import ContractSummaryBarChart from "./ContractSummaryBarChart/ContractSummaryBarChart";
+
+// import CalendarWithEvents from "./CalendarSection/CalendarSection";
 const HomePage = () => {
+  const theme = useTheme();
   const classes = styles();
 
   return (
@@ -29,68 +41,46 @@ const HomePage = () => {
       </div>
       <div className={classes.secondSectionRow}>
         <div style={{ display: "flex", gap: 15 }}>
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
+          <div className={classes.moneyOutAndInListContainer}>
             {moneyOutAndIn.map((item) => (
               <MoneyOutAndInCard key={item.id} {...item} />
             ))}
           </div>
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              gap: 10,
-            }}
-          >
-            <div
-              style={{
-                borderRadius: 30,
-                width: "100%",
-                height: 103,
-                backgroundColor: "green",
-              }}
-            >
-              block1
-            </div>
-            <div
-              style={{
-                display: "flex",
-                gap: 10,
-                width: "100%",
-              }}
-            >
-              <div
-                style={{
-                  borderRadius: 30,
-                  backgroundColor: "red",
-                  width: "100%",
-                }}
-              ></div>
-              <div
-                style={{
-                  borderRadius: 30,
-                  backgroundColor: "red",
-                  height: 240,
-                  width: "100%",
-                }}
-              ></div>
+          <div className={classes.clientsContainer}>
+            <Clients clients={clients} />
+            <div className={classes.pieChartsContainer}>
+              <InflationCard
+                icon={percentIcon}
+                percentage={15}
+                Chart={PieChart}
+                growth
+                percentageColor1={theme.chartColor1}
+                percentageColor2={theme.chartColor2}
+                amount={145200}
+              />
+              <InflationCard
+                icon={lightningIcon}
+                Chart={PieChart}
+                growth={false}
+                percentage={21}
+                percentageColor1={theme.chartColor3}
+                percentageColor2={theme.chartColor4}
+                amount={21450}
+              />
             </div>
           </div>
         </div>
-        <div
-          style={{
-            borderRadius: 30,
-            width: "100%",
-            backgroundColor: "green",
-          }}
-        ></div>
+        <div className={classes.calendarWrapper}>
+          {/* <CalendarWithEvents /> */}
+        </div>
+      </div>
+      <div className={classes.chartsContainer}>
+        <div className={classes.loanContractsChartWrapper}>
+          <LoanContractsChart />
+        </div>
+        <div className={classes.contractSummaryBarChartWrapper}>
+          <ContractSummaryBarChart />
+        </div>
       </div>
     </div>
   );

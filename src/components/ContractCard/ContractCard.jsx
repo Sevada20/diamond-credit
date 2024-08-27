@@ -20,6 +20,7 @@ const ContractCard = ({
   email,
   category,
   rate,
+  amount,
 }) => {
   const classes = styles({ status });
 
@@ -56,6 +57,7 @@ const ContractCard = ({
           {category?.title || "no category"}
         </span>
         <span className={classes.cardInfo}>{rate}</span>
+        {amount && <span className={classes.cardInfo}>{amount}</span>}
         <Link to={`/contracts/${ADB_ID}`}>
           <img
             className={classes.viewIcon}

@@ -30,6 +30,7 @@ export const light = {
   textMutedSecondary: "#afb0c0",
   textMutedTertiary: "#381f60",
   successColor: "#00B012",
+  overdueColor: "#ff8a00",
   successColorSecondary: "#52887a",
   inProgressColor: "#e98147",
   warningColor: "#DC0505",
@@ -58,6 +59,12 @@ export const light = {
   roleColor2: "#d3cbf6",
   gold: "#ffb800",
   violet: "#fa00ff",
+  chartColor1: "#efc2ff",
+  chartColor2: "#d852c2",
+  chartColor3: "#93d3f8",
+  chartColor4: "#d5d5e7",
+  lineChartColor: "#9291a5",
+  lineChartColor1: "#1e1b39",
 };
 
 export const borderRadius = {
