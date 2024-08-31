@@ -1,7 +1,24 @@
+import { Controller } from "react-hook-form";
+import InputMask from "react-input-mask";
 import styles from "./styles";
 
-const Step1 = ({ goToNextStep, countries, cities, register, errors }) => {
+const Step1 = ({
+  goToNextStep,
+  countries,
+  armenianCities,
+  register,
+  errors,
+  trigger,
+  control,
+  watch,
+}) => {
   const classes = styles();
+
+  const country = watch("country");
+
+  const onBlurValidation = async (field) => {
+    await trigger(field);
+  };
 
   return (
     <form className={classes.formContainer}>
@@ -31,19 +48,19 @@ const Step1 = ({ goToNextStep, countries, cities, register, errors }) => {
           <input
             placeholder="Ազգանուն"
             className={classes.input}
-            {...register("surName")}
+            {...register("surname")}
           />
-          {errors.surName && <p>{errors.surName.message}</p>}
+          {errors.surname && <p>{errors.surname.message}</p>}
         </div>
 
         <div className={classes.inputWrapper}>
           <label className={classes.label}>Հայրանուն</label>
           <input
-            placeholder="․․․"
+            placeholder="..."
             className={classes.input}
-            {...register("patronymic")}
+            {...register("middle_name")}
           />
-          {errors.patronymic && <p>{errors.patronymic.message}</p>}
+          {errors.middle_name && <p>{errors.middle_name.message}</p>}
         </div>
       </div>
 
@@ -51,19 +68,31 @@ const Step1 = ({ goToNextStep, countries, cities, register, errors }) => {
         <div className={classes.inputWrapper}>
           <label className={classes.label}>Անձնագրի սերիա</label>
           <input
+            maxLength={10}
             placeholder="OO 00000000"
             className={classes.input}
-            {...register("passportSeries")}
+            {...register("passport")}
           />
-          {errors.passportSeries && <p>{errors.passportSeries.message}</p>}
+          {errors.passport && <p>{errors.passport.message}</p>}
         </div>
 
         <div className={classes.inputWrapper}>
           <label className={classes.label}>Վավերականություն</label>
-          <input
-            placeholder="օր/ամիս/տարի"
-            className={classes.input}
-            {...register("validity")}
+          <Controller
+            name="validity"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <InputMask
+                {...field}
+                mask="99.99.9999"
+                placeholder="օր.ամիս.տարի"
+                className={classes.input}
+                onBlur={() => onBlurValidation("validity")}
+              >
+                {(inputProps) => <input type="text" {...inputProps} />}
+              </InputMask>
+            )}
           />
           {errors.validity && <p>{errors.validity.message}</p>}
         </div>
@@ -71,6 +100,7 @@ const Step1 = ({ goToNextStep, countries, cities, register, errors }) => {
         <div className={classes.inputWrapper}>
           <label className={classes.label}>Տրված</label>
           <input
+            maxLength={3}
             placeholder="000"
             className={classes.input}
             {...register("given")}
@@ -83,18 +113,21 @@ const Step1 = ({ goToNextStep, countries, cities, register, errors }) => {
         <label className={classes.label}>Ծննդյան տարեթիվ</label>
         <div className={classes.dateInputs}>
           <input
+            maxLength={2}
             placeholder="ՕՐ"
-            {...register("birthdayDay")}
+            {...register("dobDay")}
             className={classes.dateInput}
           />
           <input
+            maxLength={2}
             placeholder="ԱՄԻՍ"
-            {...register("birthdayMonth")}
+            {...register("dobMonth")}
             className={classes.dateInput}
           />
           <input
+            maxLength={4}
             placeholder="ՏԱՐԻ"
-            {...register("birthdayYear")}
+            {...register("dobYear")}
             className={classes.dateInput}
           />
         </div>
@@ -103,21 +136,48 @@ const Step1 = ({ goToNextStep, countries, cities, register, errors }) => {
       <div className={classes.inputsContainer}>
         <div className={classes.inputWrapper}>
           <label className={classes.label}>Երկիր</label>
-          <input
-            placeholder="Հայաստան"
-            className={classes.input}
-            {...register("country")}
-          />
+          <select className={classes.input} {...register("country")}>
+            {countries.map((country) => (
+              <option key={country.id} value={country.englishName}>
+                {country.armenianName}
+              </option>
+            ))}
+          </select>
           {errors.country && <p>{errors.country.message}</p>}
         </div>
 
         <div className={classes.inputWrapper}>
           <label className={classes.label}>Քաղաք</label>
-          <input
-            placeholder="Երևան"
-            className={classes.input}
-            {...register("city")}
-          />
+          {country === "Armenia" ? (
+            <label>
+              <select {...register("city")} className={classes.input}>
+                <option value="">Երևան</option>
+                {armenianCities.map((city) => (
+                  <option key={city.id} value={city.englishName}>
+                    {city.armenian}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ) : (
+            <label>
+              <input
+                className={classes.input}
+                type="text"
+                {...register("city")}
+                placeholder={
+                  country === "Armenia"
+                    ? "Երևան"
+                    : country == "Georgia"
+                    ? "Թբիլիսի"
+                    : country == "Russia"
+                    ? "Մոսկվա"
+                    : "Թեհրան"
+                }
+              />
+            </label>
+          )}
+
           {errors.city && <p>{errors.city.message}</p>}
         </div>
 
@@ -126,9 +186,9 @@ const Step1 = ({ goToNextStep, countries, cities, register, errors }) => {
           <input
             placeholder="Գայի պ․ 51/5"
             className={classes.input}
-            {...register("streetBuilding")}
+            {...register("street")}
           />
-          {errors.streetBuilding && <p>{errors.streetBuilding.message}</p>}
+          {errors.street && <p>{errors.street.message}</p>}
         </div>
       </div>
 
@@ -140,6 +200,7 @@ const Step1 = ({ goToNextStep, countries, cities, register, errors }) => {
             className={classes.input}
             type="email"
             {...register("email")}
+            onBlur={() => onBlurValidation("email")}
           />
           {errors.email && <p>{errors.email.message}</p>}
         </div>

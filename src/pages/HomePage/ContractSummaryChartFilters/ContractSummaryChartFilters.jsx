@@ -11,6 +11,10 @@ const ContractSummaryChartFilters = () => {
 
   return (
     <div className={classes.contractSummaryChartFiltersContainer}>
+      <div className={classes.mainFilter}>
+        <div className={classes.indicator}></div>
+        <span className={classes.title}>Ֆիլտրել</span>
+      </div>
       <div className={classes.filtersList}>
         {contractSummaryChartFilters.map((item) => (
           <div key={item.id} className={classes.filterItemContainer}>
@@ -23,6 +27,7 @@ const ContractSummaryChartFilters = () => {
               type="radio"
             />
             <label htmlFor={item.name}>{item.label}</label>
+            <span className={classes.percent}>{item.percent} %</span>
           </div>
         ))}
       </div>

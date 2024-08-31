@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -8,6 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { contractSummaryChartDayFilters } from "@/assets/data/chartsData";
 import ContractSummaryChartFilters from "../ContractSummaryChartFilters/ContractSummaryChartFilters";
 import styles from "./styles";
 
@@ -22,6 +24,11 @@ ChartJS.register(
 
 const ContractSummaryBarChart = () => {
   const classes = styles();
+  const [activeDayFilterButton, setActiveDayFilterButton] = useState(1);
+
+  const handleDayFilterButtonClick = (id) => {
+    setActiveDayFilterButton(id);
+  };
 
   const getMonths = (count) => {
     const months = [
@@ -124,10 +131,26 @@ const ContractSummaryBarChart = () => {
     <div className={classes.loanContractsChartContainer}>
       <div className={classes.titlesContainer}>
         <span className={classes.title}>Վիճակագրություն</span>
-        <span className={classes.subtitle}>Վարկի ընդհանուր ամփոփագիր</span>
+        <div className={classes.subtitleContainer}>
+          <span className={classes.subtitle}>Վարկի ընդհանուր ամփոփագիր</span>
+          <div className={classes.buttonsContainer}>
+            {contractSummaryChartDayFilters.map((button) => (
+              <span
+                className={`${classes.button} ${
+                  button.id === activeDayFilterButton ? classes.active : null
+                }`}
+                onClick={() => handleDayFilterButtonClick(button.id)}
+                key={button.id}
+              >
+                {button.label}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
       <div className={classes.chartContainer}>
-        <Bar data={chartData} options={options} />
+        <Bar height="210px" data={chartData} options={options} />
+        <div className={classes.divider}></div>
         <ContractSummaryChartFilters />
       </div>
     </div>

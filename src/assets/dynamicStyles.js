@@ -13,6 +13,7 @@ export const light = {
   backgroundSecondary: "#EEF5FE",
   backgroundTertiary: "#fbfafd",
   backgroundQuaternary: "#fff8f0",
+  backgroundQuinary: "#fff8ff",
   backgroundCard: "#FFFEFE",
   backgroundPink: "#ffebf8",
   backgroundLightBlue: "#E9F7FB",
@@ -65,6 +66,8 @@ export const light = {
   chartColor4: "#d5d5e7",
   lineChartColor: "#9291a5",
   lineChartColor1: "#1e1b39",
+  barChartColor: "#e5e5ef",
+  barChartColor1: "#4a3aff",
 };
 
 export const borderRadius = {

@@ -38,6 +38,7 @@ const SignInForm = ({ nextStep }) => {
       login({
         email: values.email,
         password: values.password,
+        rememberPassword: values.rememberPassword,
       })
     );
   };

@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-flatpickr": "^3.10.13",
     "react-hook-form": "^7.52.0",
+    "react-input-mask": "^2.0.4",
     "react-jss": "^10.10.0",
     "react-paginate": "^8.2.0",
     "react-redux": "^9.1.2",

@@ -14,7 +14,7 @@ const CustomSelector = ({
     <div className={classes.selector}>
       <label className={classes.label}>{label}</label>
       <select {...register(name)} className={classes.select}>
-        {defaultValue && <option value=""> {defaultValue}</option>}{" "}
+        {defaultValue && <option value="">{defaultValue}</option>}{" "}
         {options.map((optionItem) => (
           <option key={optionItem.id} value={optionItem.option}>
             {optionItem.option}

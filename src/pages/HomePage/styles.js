@@ -85,7 +85,6 @@ const useStyles = createUseStyles(
     },
     contractSummaryBarChartWrapper: {
       width: "50%",
-      border: "2px solid red",
       marginTop: 15,
       backgroundColor: "white",
       padding: 25,
