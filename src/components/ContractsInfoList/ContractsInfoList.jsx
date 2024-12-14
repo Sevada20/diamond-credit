@@ -1,6 +1,12 @@
 import ContractInfoCard from "../ContractInfoCard/ContractInfoCard";
 import styles from "./styles";
-const ContractsInfoList = ({ infoCardList, GeneralIcon }) => {
+const ContractsInfoList = ({
+  infoCardList,
+  GeneralIcon,
+  allContracts,
+  activeContracts,
+  executedContracts,
+}) => {
   const classes = styles();
 
   return (

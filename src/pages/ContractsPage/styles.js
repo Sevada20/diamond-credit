@@ -4,6 +4,7 @@ const useStyles = createUseStyles(
   (theme) => ({
     contractsPage: {
       padding: "20px 30px 20px 30px",
+      minHeight: "100vh",
     },
     contractContainer: {
       borderRadius: "30px",

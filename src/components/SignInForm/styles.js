@@ -6,7 +6,7 @@ const useStyles = createUseStyles(
       width: "100%",
       display: "flex",
       flexDirection: "column",
-      gap: "15px",
+      gap: 15,
     },
     signInBtnWrapper: {
       marginTop: 32,
@@ -19,17 +19,27 @@ const useStyles = createUseStyles(
     },
     checkboxGroup: {
       display: "flex",
-      gap: "5px",
+      gap: 5,
     },
-    checkbox: { width: "16px", height: "16px", cursor: "pointer" },
-    checkboxLabel: { cursor: "pointer" },
-    forgotPassword: { fontSize: "14px", color: "#FFC48E", cursor: "pointer" },
+    checkbox: {
+      width: 16,
+      height: 16,
+      cursor: "pointer",
+    },
+    checkboxLabel: {
+      cursor: "pointer",
+    },
+    forgotPassword: {
+      fontSize: 14,
+      color: "#FFC48E",
+      cursor: "pointer",
+    },
     signInBtn: {
       width: "50%",
-      paddingBlock: "10px",
+      paddingBlock: 10,
       borderRadius: theme.borderRadius.small,
       backgroundColor: theme.primaryColor,
-      color: "#fff",
+      color: theme.backgroundBase,
       border: "none",
       cursor: "pointer",
     },

@@ -1,7 +1,7 @@
 import SearchIcon from "@/assets/icons/headerIcons/SearchIcon";
 import LetterIcon from "@/assets/icons/headerIcons/LetterIcon";
 import NotificationIcon from "@/assets/icons/headerIcons/NotificationIcon";
-import userIcon from "../../assets/icons/headerIcons/userIcon.png";
+import userIcon from "@/assets/icons/headerIcons/userIcon.png";
 import styles from "./styles";
 
 const Header = () => {

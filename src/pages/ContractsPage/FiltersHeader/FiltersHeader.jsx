@@ -3,9 +3,8 @@ import { mainFilters } from "@/assets/data/filterFields";
 import MyDatePicker from "@/components/MyDatePicker/MyDatePicker";
 import styles from "./styles";
 
-const FiltersHeader = () => {
-  const [activeFilter, setActiveFilter] = useState(1);
-  const classes = styles({ activeFilter });
+const FiltersHeader = ({ handleFilterChange, activeFilterStatus }) => {
+  const classes = styles();
   const [dates, setDates] = useState({
     dateFrom: new Date(),
     dateTo: new Date(),
@@ -18,15 +17,24 @@ const FiltersHeader = () => {
     }));
   };
 
+  const handleFilterClick = (filterId) => {
+    const filter = mainFilters.find((f) => f.id === filterId);
+    if (filter) {
+      handleFilterChange(filter.status);
+    }
+  };
+
   return (
     <div className={classes.filtersHeader}>
       <div className={classes.mainFiltersMenu}>
         {mainFilters.map((filter) => (
           <span
-            onClick={() => setActiveFilter(filter.id)}
+            onClick={() => {
+              handleFilterClick(filter.id);
+            }}
             key={filter.id}
             className={`${classes.mainFilterItem} ${
-              activeFilter === filter.id ? classes.active : ""
+              activeFilterStatus === filter.status ? classes.active : ""
             }`}
           >
             {filter.label}

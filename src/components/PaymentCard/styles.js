@@ -4,28 +4,32 @@ const useStyles = createUseStyles(
   (theme) => ({
     paymentCardContainer: {
       backgroundColor: ({ isChecked }) =>
-        isChecked ? theme.backgroundChecked : "",
+        isChecked ? theme.checkedBackground : "",
     },
-    tableInputCell: {
-      padding: "14px 0px 14px 10px",
-      display: "flex",
-      alignItems: "center",
-      gap: 10,
+    tableDateCell: {
+      borderRadius: `${theme.borderRadius.mediumLarge} 0 0 ${theme.borderRadius.mediumLarge}`,
+      paddingLeft: 15,
     },
-    input: {
-      width: 24,
-      height: 24,
-    },
-    fileIcon: {},
     tableCell: {
       textAlign: "left",
-      padding: "10px 10px 10px 60px",
+      padding: "10px 10px 10px 75px",
       fontSize: 16,
       color: theme.primaryColor,
+      whiteSpace: "nowrap",
     },
     paymentCardLabel: {
       fontSize: 14,
       color: theme.labelSecondaryColor,
+    },
+    discountWrapper: {
+      borderRadius: `0 ${theme.borderRadius.mediumLarge}  ${theme.borderRadius.mediumLarge} 0`,
+    },
+    discount: {
+      padding: "5px 10px",
+      color: theme.primaryColor,
+      borderRadius: theme.borderRadius.small,
+      backgroundColor: theme.backgroundSecondary,
+      cursor: "pointer",
     },
   }),
   {

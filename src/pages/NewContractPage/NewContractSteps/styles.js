@@ -32,7 +32,7 @@ const useStyles = createUseStyles(
       alignItems: "center",
       paddingInline: "2.5%",
       paddingBlock: "10%",
-      borderRadius: theme.borderRadius.secondaryMediumum,
+      borderRadius: theme.borderRadius.secondaryMedium,
       background:
         "linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0))",
     },
@@ -68,6 +68,25 @@ const useStyles = createUseStyles(
     },
     stepsWrapper: {
       paddingInline: 22,
+    },
+    newContractSteps: {
+      maxHeight: 441,
+      overflowY: "auto",
+      "&::-webkit-scrollbar": {
+        width: 4,
+      },
+      "&::-webkit-scrollbar-track": {
+        background: "#d7d7e0",
+        borderRadius: theme.borderRadius.large,
+      },
+      "&::-webkit-scrollbar-thumb": {
+        backgroundColor: "#b0a9ca",
+        borderRadius: theme.borderRadius.large,
+        backgroundClip: "content-box",
+      },
+      "&::-webkit-scrollbar-thumb:hover": {
+        backgroundColor: theme.primaryColor,
+      },
     },
     customInputsGroupWrapper: {
       paddingInline: 22,

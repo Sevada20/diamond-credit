@@ -3,6 +3,9 @@ import { useTheme } from "react-jss";
 import styles from "./styles";
 
 const InputField = ({
+  handlePasswordVisible,
+  passwordVisible,
+  showPasswordIcon,
   label,
   type,
   name,
@@ -22,7 +25,7 @@ const InputField = ({
           {label}
         </label>
         <Field
-          type={type}
+          type={passwordVisible ? "text" : type}
           name={name}
           className={classes.input}
           value={value}
@@ -32,6 +35,14 @@ const InputField = ({
         <div className={classes.inputIconWrapper}>
           <Icon width={20} height={20} color={theme.primaryColor} />
         </div>
+        {showPasswordIcon && (
+          <img
+            onClick={handlePasswordVisible}
+            src={showPasswordIcon}
+            className={classes.showPasswordIcon}
+            alt="show password icon"
+          />
+        )}
       </div>
       {error ? <div className={classes.errorMessage}>{error}</div> : null}
     </>

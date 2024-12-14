@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "react-jss";
 import { sidebarLinks } from "../../assets/data/sidebarLinks";
 import SettingsIcon from "@/assets/icons/sidebarIcons/SettingsIcon";
@@ -9,11 +9,16 @@ import styles from "./styles";
 const Sidebar = () => {
   const classes = styles();
   const theme = useTheme();
+  const location = useLocation();
+
   const [activeLink, setActiveLink] = useState(0);
 
-  const handleIconClick = (index) => {
+  useEffect(() => {
+    const index = sidebarLinks.findIndex(
+      (link) => link.to === location.pathname
+    );
     setActiveLink(index);
-  };
+  }, [location.pathname]);
 
   return (
     <div className={classes.sideBarContainer}>
@@ -25,15 +30,16 @@ const Sidebar = () => {
               <Link
                 key={index}
                 to={link.to}
-                onClick={() => handleIconClick(index)}
                 className={`${classes.iconLink} ${
                   index === activeLink ? classes.activeLink : ""
                 }`}
               >
                 <link.icon
                   color={index === activeLink ? theme.backgroundBase : "none"}
-                  color1={index === activeLink ? theme.backgroundBase : "none"}
-                  color2={
+                  statusColor1={
+                    index === activeLink ? theme.backgroundBase : "none"
+                  }
+                  statusColor2={
                     index === activeLink ? theme.backgroundBase : "#373962"
                   }
                 />
@@ -42,7 +48,16 @@ const Sidebar = () => {
           })}
         </div>
         <div className={classes.settingsContainer}>
-          <SettingsIcon />
+          <Link
+            className={`${classes.iconLink} ${
+              location.pathname.includes("/profile-manager")
+                ? classes.activeLink
+                : ""
+            }`}
+            to="/profile-manager/general"
+          >
+            <SettingsIcon />
+          </Link>
           <ExitIcon />
         </div>
       </div>

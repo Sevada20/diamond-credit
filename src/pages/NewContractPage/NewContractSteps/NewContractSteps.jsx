@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import { stepIndicatorsData } from "@/assets/data/contracts";
 import { useTheme } from "react-jss";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { inputFieldsData } from "@/assets/data/filterFields";
+import { countries } from "@/assets/data/countriesData";
+import { armenianCities } from "@/assets/data/countriesData";
 import * as yup from "yup";
 import editorIcon from "@/assets/icons/contractsIcons/editorIcon.svg";
 import Step1 from "./Step1/Step1";
@@ -23,16 +26,19 @@ const schema = yup.object().shape({
   clientsSearch: yup.string(),
   name: yup.string(),
   surName: yup.string(),
-  patronymic: yup.string(),
-  passportSeries: yup.string(),
+  middle_name: yup.string(),
+  passport: yup
+    .string()
+    .max(10, "Passport number cannot be more than 10 characters"),
   validity: yup.string(),
   given: yup.string(),
-  birthdayDay: yup.string(),
-  birthdayMonth: yup.string(),
-  birthdayYear: yup.string(),
+  dobDay: yup.string(),
+  dobMonth: yup.string(),
+  dobYear: yup.string(),
+  dob: yup.string(),
   country: yup.string(),
   city: yup.string(),
-  streetBuilding: yup.string(),
+  street: yup.string(),
   email: yup.string().email("Invalid email"),
   phone: yup.string(),
   additionalPhone: yup.string(),
@@ -95,22 +101,26 @@ const NewContractSteps = ({
     watch,
     formState: { errors },
     setValue,
+    getValues,
+    trigger,
+    control,
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
       clientsSearch: undefined,
       name: undefined,
       surName: undefined,
-      patronymic: undefined,
-      passportSeries: undefined,
+      middle_name: undefined,
+      passport: undefined,
       validity: undefined,
       given: undefined,
-      birthdayDay: undefined,
-      birthdayMonth: undefined,
-      birthdayYear: undefined,
+      dobDay: undefined,
+      dobMonth: undefined,
+      dobYear: undefined,
+      dob: undefined,
       country: undefined,
       city: undefined,
-      streetBuilding: undefined,
+      street: undefined,
       email: undefined,
       phone: undefined,
       additionalPhone: undefined,
@@ -218,6 +228,18 @@ const NewContractSteps = ({
     }
   };
 
+  const updateDob = () => {
+    const { dobDay, dobMonth, dobYear } = getValues();
+    const dob = `${dobDay}.${dobMonth}.${dobYear}`;
+    setValue("dob", dob);
+  };
+
+  const { dobDay, dobMonth, dobYear } = watch();
+
+  useEffect(() => {
+    updateDob();
+  }, [dobDay, dobMonth, dobYear]);
+
   const onSubmit = (data) => {
     console.log("Submitted data:", data);
   };
@@ -227,9 +249,14 @@ const NewContractSteps = ({
       case STEP_1:
         return (
           <Step1
+            watch={watch}
+            trigger={trigger}
             goToNextStep={goToNextStep}
             register={register}
             errors={errors}
+            control={control}
+            countries={countries}
+            armenianCities={armenianCities}
           />
         );
       case STEP_2:
@@ -299,26 +326,28 @@ const NewContractSteps = ({
             <span className={classes.headerText}>ԱՐՔԱ հարցում</span>
             <span className={classes.headerText}>ՆՈՐՔ հարցում</span>
           </div>
-          <div className={classes.stepsWrapper}>{renderStep()}</div>
-          {currentStep === STEP_2 && (
-            <>
-              <div className={classes.customInputsGroupWrapper}>
-                <CustomInputsGroup
-                  inputFieldsData={inputFieldsData}
-                  register={register}
-                  errors={errors}
-                  category={watch("category")}
-                  quantityRows={3}
-                />
-              </div>
-              {watch("category") === "Տեխնիկա" && (
-                <div className={classes.descriptionContainer}>
-                  <label className={classes.label}>Նկարագրություն</label>
-                  <textarea className={classes.description} />
+          <div className={classes.newContractSteps}>
+            <div className={classes.stepsWrapper}>{renderStep()}</div>
+            {currentStep === STEP_2 && (
+              <>
+                <div className={classes.customInputsGroupWrapper}>
+                  <CustomInputsGroup
+                    inputFieldsData={inputFieldsData}
+                    register={register}
+                    errors={errors}
+                    category={watch("category")}
+                    quantityRows={3}
+                  />
                 </div>
-              )}
-            </>
-          )}
+                {watch("category") === "Տեխնիկա" && (
+                  <div className={classes.descriptionContainer}>
+                    <label className={classes.label}>Նկարագրություն</label>
+                    <textarea className={classes.description} />
+                  </div>
+                )}
+              </>
+            )}
+          </div>
         </div>
         <div className={classes.buttonsContainer}>
           <button type="button" className={classes.cancelBtn}>

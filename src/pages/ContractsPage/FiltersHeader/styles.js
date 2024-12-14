@@ -26,6 +26,7 @@ const useStyles = createUseStyles(
       borderBottom: "1px solid #8788a1",
       paddingInline: "2.4%",
       paddingBottom: 9,
+      whiteSpace: "nowrap",
     },
     active: {
       borderBottom: `3px solid ${theme.primaryColor}`,

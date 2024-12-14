@@ -1,6 +1,6 @@
 import debitCardIcon from "../icons/homePageIcons/cashIcons/debitCardIcon.svg";
 import cashIcon from "../icons/homePageIcons/cashIcons/cashIcon.svg";
-import arrowsIcon from "../icons/homePageIcons/cashIcons/arrowsIcon.svg";
+import arrowsIcon from "../icons/arrows/arrowsIcon.svg";
 
 export const cardsData = [
   {

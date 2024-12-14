@@ -21,6 +21,15 @@ const useStyles = createUseStyles(
       padding: "10px 10px 10px 38px",
     },
     errorMessage: { color: "red", fontSize: "0.8rem" },
+    showPasswordIcon: {
+      position: "absolute",
+      top: "56%",
+      right: "12px",
+      cursor: "pointer",
+      width: 20,
+      height: 20,
+      color: theme.primaryColor,
+    },
   }),
   {
     name: "input-field",

@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import signInBackgroundImage from "../../assets/images/signIn/sighInPage.png";
+import signInBackgroundImage from "/logo.svg";
 
 const useStyles = createUseStyles(
   (theme) => ({

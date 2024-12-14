@@ -26,6 +26,13 @@ const useStyles = createUseStyles(
       height: 60,
       ...theme.mixins.flexCenter,
     },
+    settingsContainer: {
+      position: "relative",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: 30,
+    },
     activeLink: {
       backgroundColor: theme.primaryColor,
       borderRadius: "50%",
@@ -35,12 +42,6 @@ const useStyles = createUseStyles(
       gap: 20,
       flexDirection: "column",
       justifyContent: "space-between",
-    },
-    settingsContainer: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: 30,
     },
   }),
   {
